@@ -33,5 +33,17 @@ func main() {
 ### Output Unguided :
 
 ##### Output 
-![Screenshot Output Unguided 1_1](https://github.com/shellyneu/103112430114_Shellyn/blob/main/modul1/output/output-soal1.png)
-[penjelasan]
+![Screenshot Output Unguided 1_1](https://github.com/arracheille/109082500199_Achel/blob/main/Modul2/output/output-soal2A.png)
+##### Penjelasan
+Program ini adalah sebuah program dengan konsep pertukaran nilai:
+<ol>
+  <li>Program memiliki variabel satu, dua tiga dan temp dengan tipe data string.</li>
+  <li>Program memberikan input untuk variabel satu, dua dan tiga.</li>
+  <li>Setelah memasukkan input, inputan user dibaca oleh program menggunakan Scanln.</li>
+  <li>Program menampilkan output awal dari input yang diberi user menggunakan Println.</li>
+  <li>Nilai variabel satu disimpan ke variabel temp.</li>
+  <li>Nilai variabel dua dipindahkan ke variabel satu.</li>
+  <li>Nilai variabel tiga dipindahkan ke variabel dua.</li>
+  <li>Nilai yang tadi disimpan di temp (yaitu nilai asli satu) dipindahkan ke variabel tiga. </li>
+  <li>Program menampilkan output akhir dari variabel yang sudah dipindah menggunakan Println.</li>
+</ol>
