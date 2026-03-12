@@ -1,9 +1,9 @@
-# <h1 align="center">Laporan Praktikum Modul 2 - ... </h1>
-<p align="center">[Aqilla Rachel Rabbani] - [109082500199]</p>
+# <h1 align="center">Laporan Praktikum Modul 2 - Review ALPRO 1 </h1>
+<p align="center">Aqilla Rachel Rabbani - 109082500199</p>
 
 ## Unguided 
 
-### 1. Soal Latihan Modul 2A
+### 1. Telusuri program berikut dengan cara mengkompilasi dan mengeksekusi program. Silakan masukan data yang sesuai sebanyak yang diminta program. Perhatikan keluaran yang diperoleh. Coba terangkan apa sebenarnya yang dilakukan program tersebut?
 #### soal2A.go
 
 ```go
@@ -48,7 +48,7 @@ Program ini adalah sebuah program dengan konsep pertukaran nilai:
   <li>Program menampilkan output akhir dari variabel yang sudah dipindah menggunakan Println.</li>
 </ul>
 
-### 2. Soal Latihan Modul 2B
+### 2. Siswa kelas IPA di salah satu sekolah menengah atas di Indonesia sedang mengadakan praktikum kimia. Di setiap percobaan akan menggunakan 4 tabung reaksi, yang mana susunan warna cairan di setiap tabung akan menentukan hasil percobaan. Siswa diminta untuk mencatat hasil percobaan tersebut. Percobaan dikatakan berhasil apabila susunan warna zat cair pada gelas 1 hingga gelas 4 secara berturutan adalah ‘merah’, ‘kuning’,‘hijau’, dan ‘ungu’ selama 5 kali percobaan berulang. Buatlah sebuah program yang menerima input berupa warna dari ke 4 gelas reaksi sebanyak 5 kali percobaan. Kemudian program akan menampilkan true apabila urutan warna sesuai dengan informasi yang diberikan pada paragraf sebelumnya, dan false untuk urutan warna lainnya.
 #### soal2B.go
 
 ```go
@@ -77,28 +77,28 @@ func main() {
 ##### Output 
 ![Screenshot Output Unguided 1_2](https://github.com/arracheille/109082500199_Achel/blob/main/Modul2/output/output-soal2B.png)
 ##### Penjelasan
-Program ini adalah sebuah program dengan konsep pertukaran nilai:
+Program ini adalah program untuk melihat apakah sebuah percobaan praktikum kimia berhasil atau tidak berdasarkan urutan warna dari 4 gelas pada 5 kali perulangan:
 <ul>
   <li>Program memiliki variabel gelas1, gelas2, gelas3 dan gelas4 dengan tipe data string.</li>
   <li>Program membuat variabel baru bernama berhasil dan diberi nilai true (boolean).</li>
   <li>Program membuat perulangan for dengan:
 	<ol type="a">
-		<li>inisiasi, yaitu program membuat variabel baru bernama percobaan menggunakan “:=” dan diberi nilai 1.</li>
-		<li>kondisinya adalah nilai variabel percobaan kurang dari sama dengan 5.</li>
-		<li>updatenya adalah percobaan++ (Post-increment).</li>
+		<li><strong>inisiasi</strong>, yaitu program membuat variabel baru bernama percobaan menggunakan “:=” dan diberi nilai 1.</li>
+		<li><strong>kondisinya</strong> adalah nilai variabel percobaan kurang dari sama dengan 5.</li>
+		<li><strong>updatenya</strong> adalah percobaan++ (Post-increment).</li>
 	</ol>
   </li>
   <li>Lalu kode yang dibuat di dalam for adalah:
 	<ol type="a">
-		<li>Text perintah untuk memasukkan nilai variabel gelas1, gelas2, gelas3 dan gelas4 menggunakan fmt.Printf (print format), yang bertuliskan “Percobaan %d: ”. Saat di-outputkan, %d nilainya akan berubah menjadi nilai variabel percobaan. </li>
-		<li>Input untuk nilai variabel gelas1, gelas2, gelas3 dan gelas4. Setelah memasukkan input, inputan user dibaca oleh program menggunakan fmt.Scan dengan &gelas1, &gelas2, &gelas3 dan &gelas4, lalu nilai inputan dimasukkan ke dalam masing-masing variabel secara berurutan.</li>
-		<li>Kondisi if, yaitu jika nilai variabel gelas1 tidak sama dengan “merah” atau nilai variabel gelas2 tidak sama dengan “kuning” atau nilai variabel gelas3 tidak sama dengan “hijau” atau nilai variabel gelas4 tidak sama dengan “ungu”, maka nilai variabel berhasil diubah menjadi false.</li>
+		<li><strong>Text perintah</strong> untuk memasukkan nilai variabel gelas1, gelas2, gelas3 dan gelas4 menggunakan fmt.Printf (print format), yang bertuliskan “Percobaan %d: ”. Saat di-outputkan, %d nilainya akan berubah menjadi nilai variabel percobaan. </li>
+		<li><strong>Input</strong> untuk nilai variabel gelas1, gelas2, gelas3 dan gelas4. Setelah memasukkan input, inputan user dibaca oleh program menggunakan fmt.Scan dengan &gelas1, &gelas2, &gelas3 dan &gelas4, lalu nilai inputan dimasukkan ke dalam masing-masing variabel secara berurutan.</li>
+		<li><strong>Kondisi if</strong>, yaitu jika nilai variabel gelas1 tidak sama dengan “merah” atau nilai variabel gelas2 tidak sama dengan “kuning” atau nilai variabel gelas3 tidak sama dengan “hijau” atau nilai variabel gelas4 tidak sama dengan “ungu”, maka nilai variabel berhasil diubah menjadi false.</li>
 	</ol>
   </li>
   <li>Terakhir, ada output menggunakan fmt.Print yang bertuliskan “BERHASIL: (nilai variabel berhasil)”, nilai variabel berhasil bisa bertulis true atau false.</li>
 </ul>
 
-### 3. Soal Latihan Modul 2C
+### 3. PT POS membutuhkan aplikasi perhitungan biaya kirim berdasarkan berat parsel. Maka, buatlah program BiayaPos untuk menghitung biaya pengiriman tersebut dengan ketentuan sebagai berikut! Dari berat parsel (dalam gram), harus dihitung total berat dalam kg dan sisanya (dalam gram). Biaya jasa pengiriman adalah Rp. 10.000,- per kg. Jika sisa berat tidak kurang dari 500 gram, maka tambahan biaya kirim hanya Rp. 5,- per gram saja. Tetapi jika kurang dari 500 gram, maka tambahan biaya akan dibebankan sebesar Rp. 15,- per gram. Sisa berat (yang kurang dari 1kg) digratiskan biayanya apabila total berat ternyata lebih dari 10kg.
 #### soal2C.go
 
 ```go
@@ -142,7 +142,7 @@ func main() {
 ##### Output 
 ![Screenshot Output Unguided 1_3](https://github.com/arracheille/109082500199_Achel/blob/main/Modul2/output/output-soal2C.png)
 ##### Penjelasan
-Program ini adalah sebuah program dengan konsep pertukaran nilai:
+Program ini adalah program bernama BiayaPos yang berfungsi untuk meng-kalkulasi perhitungan biaya kirim berdasarkan berat parsel, dimana ada beberapa syarat untuk beberapa kategori berat parsel:
 <ul>
   <li>Program memiliki variabel parsel, kg, gr, harga_kg, harga_gr dan total dengan tipe data int (integer).</li>
   <li>Program menampilkan text perintah untuk memasukkan nilai variabel parsel kepada user menggunakan fmt.Print.</li>
@@ -176,5 +176,3 @@ Program ini adalah sebuah program dengan konsep pertukaran nilai:
 	</ol>
   </li>
 </ul>
-
-
