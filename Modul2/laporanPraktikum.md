@@ -92,7 +92,7 @@ Program ini adalah program untuk melihat apakah sebuah percobaan praktikum kimia
 	<ol type="a">
 		<li><strong>Text perintah</strong> untuk memasukkan nilai variabel gelas1, gelas2, gelas3 dan gelas4 menggunakan fmt.Printf (print format), yang bertuliskan “Percobaan %d: ”. Saat di-outputkan, %d nilainya akan berubah menjadi nilai variabel percobaan. </li>
 		<li><strong>Input</strong> untuk nilai variabel gelas1, gelas2, gelas3 dan gelas4. Setelah memasukkan input, inputan user dibaca oleh program menggunakan fmt.Scan dengan &gelas1, &gelas2, &gelas3 dan &gelas4, lalu nilai inputan dimasukkan ke dalam masing-masing variabel secara berurutan.</li>
-		<li><strong>Kondisi if</strong>, yaitu jika nilai variabel gelas1 tidak sama dengan “merah” atau nilai variabel gelas2 tidak sama dengan “kuning” atau nilai variabel gelas3 tidak sama dengan “hijau” atau nilai variabel gelas4 tidak sama dengan “ungu”, maka nilai variabel berhasil diubah menjadi false.</li>
+		<li><strong>Kondisi if</strong>, yaitu jika nilai variabel gelas1 tidak sama dengan “merah” <strong>atau</strong> nilai variabel gelas2 tidak sama dengan “kuning” <strong>atau</strong> nilai variabel gelas3 tidak sama dengan “hijau” <strong>atau</strong> nilai variabel gelas4 tidak sama dengan “ungu”, maka nilai variabel berhasil diubah menjadi false. Jika gelasnya sesuai dengan urutan yaitu “merah kuning hijau ungu”, maka nilai variabel berhasil tidak berubah/sama dengan deklarasi nilai awal (true)</li>
 	</ol>
   </li>
   <li>Terakhir, ada output menggunakan fmt.Print yang bertuliskan “BERHASIL: (nilai variabel berhasil)”, nilai variabel berhasil bisa bertulis true atau false.</li>
@@ -147,7 +147,7 @@ Program ini adalah program bernama BiayaPos yang berfungsi untuk meng-kalkulasi 
   <li>Program memiliki variabel parsel, kg, gr, harga_kg, harga_gr dan total dengan tipe data int (integer).</li>
   <li>Program menampilkan text perintah untuk memasukkan nilai variabel parsel kepada user menggunakan fmt.Print.</li>
   <li>Program memberikan input untuk nilai variabel parsel.</li>
-  <li>Setelah memasukkan input, inputan user dibaca oleh program menggunakan fmt.Scan, lalu mencari input source variabel orang menggunakan &parsel.</li>
+  <li>Setelah memasukkan input, inputan user dibaca oleh program menggunakan fmt.Scan, lalu mencari input source variabel parcel menggunakan &parsel.</li>
   <li>Program memberikan rumus untuk variabel kg, yaitu nilai variabel parsel dibagi 1000. Variabel kg adalah berat parsel dalam kg.</li>
   <li>Program memberikan rumus untuk variabel gr, yaitu nilai variabel parsel di-modulus 1000. Variabel gr adalah sisa berat parsel dalam gram.</li>
   <li>Program memberikan rumus untuk variabel harga_kg, yaitu nilai kg dikali 10000.</li>
