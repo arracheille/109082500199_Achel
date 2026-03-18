@@ -51,12 +51,34 @@ func main() {
 ##### Output 
 ![Screenshot Output Unguided 1_1](https://github.com/arracheille/109082500199_Achel/blob/main/Modul3/output/output-soal1.png)
 ##### Penjelasan
+Program ini adalah program untuk menghitung faktorial(factorial) dan permutasi(permutation) dari dari variabel a, b, c dan d. Tidak hanya itu, program ini juga menghitung kombinasi(combination) dari faktorial dan permutasi. Setiap perhitungan faktorial, permutasi, dan kombinasi menggunakan function atau fungsi. Agar program bekerja dengan baik, input variabel a harus lebih besar sama dengan variabel c, dan input variabel b lebih besar sama dengan variabel d. Berikut ini penjelasan yang lebih lanjut:
 <ul>
-  <li>
-  <li>
-	<ol type="a">
-		<li><strong></strong></li>
+  <li><strong>Di dalam func main()</strong>
+	<ol>
+		<li>Program memiliki variabel a, b c dan d dengan tipe data int</li>
+		<li>Program menampilkan text perintah untuk memasukkan nilai variabel a, b, c dan d kepada user menggunakan fmt.Print.</li>
+		<li>Program memberikan input untuk nilai variabel a, b, c dan d.Setelah memasukkan input, inputan user dibaca oleh program menggunakan fmt.Scan dan &a, &b, &c, &d, lalu nilai inputan dimasukkan ke variabel a, b, c dan d secara berurutan.</li>
+		<li>Program menampilkan output untuk permutasi dari variabel a dan c menggunakan fmt.Print</li>
+		<li>Program menampilkan output untuk kombinasi dari variabel a dan c menggunakan fmt.Println, fmt.Println digunakan agar output dibawah output ini berada pada line/baris baru.</li>
+		<li>Program menampilkan output untuk permutasi dari variabel b dan d menggunakan fmt.Print</li>
+		<li>Program menampilkan output untuk kombinasi dari variabel b dan d menggunakan fmt.Println, fmt.Println digunakan agar output dibawah output ini berada pada line/baris baru.</li>
 	</ol>
+  </li>
+  <li><strong>fungsi/function(func) faktorial, permutasi, dan kombinasi</strong>
+	<ol>
+		<li><strong>factorial</strong>
+		</br>Pada function ini, program menggunakan variabel n, bertipe data integer. Nilai yang dimasukkan ke function dimasukkan ke variabel n. Function ini membuat variabel baru bernama j dan diberi nilai 1, lalu membuat perulangan for dengan membuat variabel baru pada inisiasi, kondisinya i lebih kecil sama dengan n, dan updatenya i++/post-increment. kode yang tertulis di dalam for adalah variabel j dikalikan variabel i pada setiap perulangan dan nilai variabel i dimasukkan ke variabel j. Terakhir, function menggunakan return untuk mengembalikan nilai variabel j. <strong>Singkatnya, function ini menghitung faktorial dari suatu nilai menggunakan perulangan for</strong>
+		</li>
+		<li><strong>permutation</strong>
+		</br>Pada function ini, program menggunakan variabel n dan r, bertipe data integer. Nilai yang ditujukan ke function dimasukkan ke variabel n dan r secara berurutan. Function ini membuat variabel baru bernama p dan didalamnya ada sebuah rumus faktorial dari variabel n dibagi dengan faktorial dari variabel n dikurangi variabel r. Lalu function menggunakan return untuk mengembalikan nilai variabel p.
+		</li>
+		<li><strong>permutation</strong>
+		</br>Sama seperti permutation, program menggunakan variabel n dan r dan nilai dimasukkan ke masing-masing variabel secara berurutan. Function ini membuat variabel baru bernama c dan didalamnya ada sebuah rumus yaitu faktorial dari variabel n dibagi dengan faktorial variabel r, lalu dikali faktorial dari variabel n dikurangi variabel r. Lalu function menggunakan return untuk mengembalikan nilai variabel c.
+		</li>
+	</ol>
+	<li><strong>cara kerja function</strong>
+		</br>contohnya permutation(a, c), maka yang akan terjadi adalah nilai a dimasukkan ke variabel n, nilai c dimasukkan ke variabel r dan akan menjalankan kode function permutation.
+	</li>
   </li>
 </ul>
 
