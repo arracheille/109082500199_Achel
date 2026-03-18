@@ -55,28 +55,28 @@ Program ini adalah program untuk menghitung faktorial(factorial) dan permutasi(p
 <ul>
   <li><strong>Di dalam func main()</strong>
 	<ol>
-		<li>Program memiliki variabel a, b c dan d dengan tipe data int</li>
+		<li>Program memiliki variabel a, b, c dan d dengan tipe data int</li>
 		<li>Program menampilkan text perintah untuk memasukkan nilai variabel a, b, c dan d kepada user menggunakan fmt.Print.</li>
 		<li>Program memberikan input untuk nilai variabel a, b, c dan d.Setelah memasukkan input, inputan user dibaca oleh program menggunakan fmt.Scan dan &a, &b, &c, &d, lalu nilai inputan dimasukkan ke variabel a, b, c dan d secara berurutan.</li>
 		<li>Program menampilkan output untuk permutasi dari variabel a dan c menggunakan fmt.Print</li>
-		<li>Program menampilkan output untuk kombinasi dari variabel a dan c menggunakan fmt.Println, fmt.Println digunakan agar output dibawah output ini berada pada line/baris baru.</li>
+		<li>Program menampilkan output untuk kombinasi dari variabel a dan c menggunakan fmt.Println, fmt.Println digunakan agar output selanjutnya berada pada line/baris baru.</li>
 		<li>Program menampilkan output untuk permutasi dari variabel b dan d menggunakan fmt.Print</li>
-		<li>Program menampilkan output untuk kombinasi dari variabel b dan d menggunakan fmt.Println, fmt.Println digunakan agar output dibawah output ini berada pada line/baris baru.</li>
+		<li>Program menampilkan output untuk kombinasi dari variabel b dan d menggunakan fmt.Print</li>
 	</ol>
   </li>
-  <li><strong>fungsi/function(func) faktorial, permutasi, dan kombinasi</strong>
+  <li><strong>Fungsi/function(func) dari faktorial, permutasi, dan kombinasi</strong>
 	<ol>
 		<li><strong>factorial</strong>
-		</br>Pada function ini, program menggunakan variabel n, bertipe data integer. Nilai yang dimasukkan ke function dimasukkan ke variabel n. Function ini membuat variabel baru bernama j dan diberi nilai 1, lalu membuat perulangan for dengan membuat variabel baru pada inisiasi, kondisinya i lebih kecil sama dengan n, dan updatenya i++/post-increment. kode yang tertulis di dalam for adalah variabel j dikalikan variabel i pada setiap perulangan dan nilai variabel i dimasukkan ke variabel j. Terakhir, function menggunakan return untuk mengembalikan nilai variabel j. <strong>Singkatnya, function ini menghitung faktorial dari suatu nilai menggunakan perulangan for</strong>
+		</br>Pada function ini, program menggunakan variabel n, bertipe data integer. Nilai yang dimasukkan ke function dimasukkan ke variabel n. Function ini membuat variabel baru bernama j dan diberi nilai 1, lalu membuat perulangan for dengan membuat variabel baru pada inisiasi, kondisinya i lebih kecil sama dengan n, dan updatenya i++/post-increment. kode yang tertulis di dalam for adalah variabel j dikalikan variabel i pada setiap perulangan dan nilai variabel i dimasukkan ke variabel j. Terakhir, function menggunakan return untuk mengembalikan nilai variabel j. <strong>Singkatnya, function ini menghitung faktorial dari suatu nilai menggunakan perulangan for.</strong>
 		</li>
 		<li><strong>permutation</strong>
 		</br>Pada function ini, program menggunakan variabel n dan r, bertipe data integer. Nilai yang ditujukan ke function dimasukkan ke variabel n dan r secara berurutan. Function ini membuat variabel baru bernama p dan didalamnya ada sebuah rumus faktorial dari variabel n dibagi dengan faktorial dari variabel n dikurangi variabel r. Lalu function menggunakan return untuk mengembalikan nilai variabel p.
 		</li>
-		<li><strong>permutation</strong>
+		<li><strong>combination</strong>
 		</br>Sama seperti permutation, program menggunakan variabel n dan r dan nilai dimasukkan ke masing-masing variabel secara berurutan. Function ini membuat variabel baru bernama c dan didalamnya ada sebuah rumus yaitu faktorial dari variabel n dibagi dengan faktorial variabel r, lalu dikali faktorial dari variabel n dikurangi variabel r. Lalu function menggunakan return untuk mengembalikan nilai variabel c.
 		</li>
 	</ol>
-	<li><strong>cara kerja function</strong>
+	<li><strong>Cara kerja function</strong>
 		</br>contohnya permutation(a, c), maka yang akan terjadi adalah nilai a dimasukkan ke variabel n, nilai c dimasukkan ke variabel r dan akan menjalankan kode function permutation.
 	</li>
   </li>
@@ -123,12 +123,33 @@ func main() {
 ##### Output 
 ![Screenshot Output Unguided 1_1](https://github.com/arracheille/109082500199_Achel/blob/main/Modul3/output/output-soal2.png)
 ##### Penjelasan
+Program ini adalah program untuk menghitung fungsi f, g dan h dari variabel a, b dan c. Setelah ketiga fungsi terhitung, lalu program akan menghitung fungsi fogoh untuk variabel a, gohof untuk variabel b, dan hofog untuk variabel c. Berikut penjelasan yang lebih lanjut:
 <ul>
-  <li>
-  <li>
-	<ol type="a">
-		<li><strong></strong></li>
+  <li><strong>Di dalam func main()</strong>
+	<ol>
+		<li>Program memiliki variabel a, b dan c dengan tipe data int</li>
+		<li>Program menampilkan text perintah untuk memasukkan nilai variabel a, b dan c kepada user menggunakan fmt.Print.</li>
+		<li>Program memberikan input untuk nilai variabel a, b dan c.Setelah memasukkan input, inputan user dibaca oleh program menggunakan fmt.Scan dan &a, &b, &c, lalu nilai inputan dimasukkan ke variabel a, b dan c secara berurutan.</li>
+		<li>Program menampilkan output fungsi fogoh dari variabel a menggunakan fmt.Println, fmt.Println digunakan agar output selanjutnya berada pada line/baris baru. f(g(h(a))) berarti program menghitung fungsi h dari nilai variabel a, lalu  menghitung fungsi g menggunakan hasil dari fungsi h, terakhir menghitung fungsi f menggunakan hasil dari fungsi g.</li>
+		<li>Program menampilkan output fungsi gohof dari variabel b menggunakan fmt.Println, fmt.Println digunakan agar output selanjutnya berada pada line/baris baru. g(h(f(b))) berarti program menghitung fungsi f dari nilai variabel b, lalu  menghitung fungsi h menggunakan hasil dari fungsi f, terakhir menghitung fungsi g menggunakan hasil dari fungsi h.</li>
+		<li>Program menampilkan output fungsi hofog dari variabel c menggunakan fmt.Print. h(f(g(c))) berarti program menghitung fungsi g dari nilai variabel c, lalu  menghitung fungsi f menggunakan hasil dari fungsi g, terakhir menghitung fungsi h menggunakan hasil dari fungsi f.</li>
 	</ol>
+  </li>
+    <li><strong>Fungsi/function(func) dari f, g dan h</strong>
+	<ol>
+		<li><strong>f</strong>
+		</br>Pada function ini, program menggunakan variabel x, bertipe data integer. Nilai yang dimasukkan ke function dimasukkan ke variabel x. Function ini membuat variabel baru bernama fx dan di dalamnya ada sebuah rumus aritmatika yaitu variabel x dikali variabel x. Lalu function menggunakan return untuk mengembalikan nilai variabel fx.
+		</li>
+		<li><strong>g</strong>
+		</br>Pada function ini, program menggunakan variabel x, bertipe data integer. Nilai yang dimasukkan ke function dimasukkan ke variabel x. Function ini membuat variabel baru bernama gx dan di dalamnya ada sebuah rumus aritmatika yaitu variabel x dikurangi 2. Lalu function menggunakan return untuk mengembalikan nilai variabel gx.
+		</li>
+		<li><strong>h</strong>
+		</br>Pada function ini, program menggunakan variabel x, bertipe data integer. Nilai yang dimasukkan ke function dimasukkan ke variabel x. Function ini membuat variabel baru bernama hx dan di dalamnya ada sebuah rumus aritmatika yaitu variabel x ditambah 1. Lalu function menggunakan return untuk mengembalikan nilai variabel hx.
+		</li>
+	</ol>
+	<li><strong>Cara kerja function</strong>
+		</br>contohnya f(g(h(a))), maka yang akan terjadi adalah nilai a dimasukkan ke variabel x dari function h, karena perhitungan dimulai dari function yang paling dalam. Lalu setelah program selesai menghitung function h, selanjutnya menghitung fuction g karena function h berada di dalam function g. Perhitungan dari function g adalah hasil dari function h dimasukkan ke variabel x dari function g. Setelah program selesai menghitung, terakhir, karena function g berada di dalam function f, perhitungan dari function f adalah hasil dari function g dimasukkan ke variabel x dari function f.
+	</li>
   </li>
 </ul>
 
