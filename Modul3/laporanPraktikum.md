@@ -215,11 +215,43 @@ func main() {
 ##### Output 
 ![Screenshot Output Unguided 1_1](https://github.com/arracheille/109082500199_Achel/blob/main/Modul3/output/output-soal3.png)
 ##### Penjelasan
+Program ini adalah program untuk menentukan posisi sebuah titik sembarang (variabel x dan variabel y) berdasarkan dua lingkaran. Berikut penjelasan yang lebih lanjut:
 <ul>
-  <li>
-  <li>
-	<ol type="a">
-		<li><strong></strong></li>
-	</ol>
-  </li>
+	<li><strong>Di dalam func main()</strong>
+		<ol>
+			<li><strong>Variabel untuk lingkaran 1</strong>
+			</br>Program memiliki variabel cx1, cy1 dan r1 dengan tipe data float64. cx1 adalah titik koordinat garis x, cy1 adalah titik koordinat garis y, r1 adalah radius dari lingkaran.</li>
+			<li><strong>Variabel untuk lingkaran 2</strong>
+			</br>Program memiliki variabel cx2, cy2 dan r2 dengan tipe data float64. cx2 adalah titik koordinat garis x, cy2 adalah titik koordinat garis y, r2 adalah radius dari lingkaran.</li>
+			<li>Lalu variabel x dan y bertipe data float64, sebagai titik sembarang. Variabel output bertipe data string sebagai text output</li>
+			<li>Program menampilkan text perintah untuk memasukkan nilai seluruh variabel kecuali variabel output kepada user menggunakan fmt.Print.</li>
+			<li>Program memberikan input untuk nilai seluruh variabel kecuali variabel output.Setelah memasukkan input, inputan user dibaca oleh program menggunakan fmt.Scan dan &(variabel), lalu nilai inputan dimasukkan ke variabel seluruh variabel kecuali variabel output secara berurutan.</li>
+			<li>Text perintah dan fmt.Scan dituliskan secara berkelompok, yang pertama untuk lingkaran 1, lalu lingkaran 2 dan titik sembarang.</li>
+			<li>Program membuat variabel bernama titik1 dengan isi variabel adalah function didalam, variabel ini menghitung function didalam dari nilai variabel cx1, cy1, r1, x dan y</li>
+			<li>Program membuat variabel bernama titik2 dengan isi variabel adalah function didalam, variabel ini menghitung function didalam dari nilai variabel cx2, cy2, r2, x dan y</li>
+		</ol>
+	</li>
+    <li><strong>Fungsi/function(func) didalam dan jarak</strong>
+		<ol>
+			<li><strong>didalam</strong>
+			</br>Pada function ini, program menggunakan variabel cx, cy, r, x, y, bertipe data float64. Nilai yang dimasukkan ke function dimasukkan ke variabel cx, cy, r, x, y secara berurutan. Function ini mengecek apakah lingkaran lebih kecil sama dengan radius dengan cara menggunakan return untuk mengembalikan function jarak yang diberi variabel cx, cy, x, y, lalu dicek menggunakan <= r.
+			</li>
+			<li><strong>jarak</strong>
+			</br>Pada function ini, program menggunakan variabel a, b, c, d bertipe data float64. Nilai variabel cx, cy, x, y dari function didalam dimasukkan ke variabel a, b, c, d secara berurutan. Function ini menghitung akar (math.Pow) dari hasil variabel a dikurangi variabel c, lalu dipangkatkan 2 menggunakan. Lalu ditambahkan dengan hasil variabel b dikurangi variabel d, lalu dipangkatkan 2 (kedua perpangkatan menggunakan math.Pow(a-c/b-d, 2(sebagai pangkat))). Akar ini dikembalikan menggunakan return.
+			</li>
+		</ol>
+	</li>
+	<li>Setelah menghitung titik1 dan titik2, program menggunakan if-else-if untuk membandingkan kondisi:
+		<ol>
+			<li><strong>Kondisi 1 (if)</strong>
+			</br>Kondisinya adalah jika titik1 dan (&&) titik2 bernilai true, maka variabel output berisi "Titik di dalam lingkaran 1 dan 2"</li>
+			<li><strong>Kondisi 2 (else if)</strong>
+			</br>Kondisinya adalah jika hanya titik1 yang bernilai true, maka variabel output berisi "Titik di dalam lingkaran 1"</li>
+			<li><strong>Kondisi 3 (else if)</strong>
+			</br>Kondisinya adalah jika hanya titik2 yang bernilai true, maka variabel output berisi "Titik di dalam lingkaran 2"</li>
+			<li><strong>Kondisi 4 (else)</strong>
+			</br>Kondisinya adalah jika semua kondisi diatas tidak terpenuhi, atau berarti titik1 dan titik2 bernilai false, maka variabel output berisi "Titik di luar lingkaran 1 dan 2".</li>
+		</ol>
+	</li>
+	<li>Terakhir, ada fmt.Print untuk menampilkan keluaran/text dari nilai variabel output</li>
 </ul>
