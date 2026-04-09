@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func hitungSkor(soal *int, skor *int) {
+func hitung_skor(soal *int, skor *int) {
 	var menit int
 	*soal = 0
 	*skor = 0
@@ -25,7 +25,7 @@ func main() {
 	fmt.Scan(&nama)
 
 	for nama != "Selesai" {
-		hitungSkor(&soal, &skor)
+		hitung_skor(&soal, &skor)
 
 		if soal > soal_max || (soal == soal_max && skor < skor_menang) {
 			soal_max = soal
