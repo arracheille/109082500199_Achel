@@ -3,10 +3,21 @@ package main
 import "fmt"
 
 func main(){
+	var n int
+
+	fmt.Print("Masukkan nilai variabel n: ")
+	fmt.Scan(&n)
+
 	fmt.Print("n: ")
-	index(0, 10)
+	index(0, n)
 	fmt.Print("\nSn: ")
-	deret(0, 10)
+	deret(0, n)
+
+	// pada soal tertulis deretnya sampai 10, tapi biar safe saya pakai variabel n, dibawah ini kodenya kalo sampe 10 doang
+	// fmt.Print("n: ")
+	// index(0, 10)
+	// fmt.Print("\nSn: ")
+	// deret(0, 10)
 }
 
 func index(x, n int){

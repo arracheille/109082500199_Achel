@@ -12,10 +12,21 @@ package main
 import "fmt"
 
 func main(){
+	var n int
+
+	fmt.Print("Masukkan nilai variabel n: ")
+	fmt.Scan(&n)
+
 	fmt.Print("n: ")
-	index(0, 10)
+	index(0, n)
 	fmt.Print("\nSn: ")
-	deret(0, 10)
+	deret(0, n)
+
+	// pada soal tertulis deretnya sampai 10, tapi biar safe saya pakai variabel n, dibawah ini kodenya kalo sampe 10 doang
+	// fmt.Print("n: ")
+	// index(0, 10)
+	// fmt.Print("\nSn: ")
+	// deret(0, 10)
 }
 
 func index(x, n int){
@@ -51,38 +62,62 @@ func fibonacci(n int) int {
 ##### Output 
 ![Screenshot Output Unguided 1_1](https://github.com/arracheille/109082500199_Achel/blob/main/Modul5/output/output-soal1.png)
 ##### Penjelasan
-Program ini adalah program untuk menghitung faktorial(factorial) dan permutasi(permutation) dari dari variabel a, b, c dan d. Tidak hanya itu, program ini juga menghitung kombinasi(combination) dari faktorial dan permutasi. Setiap perhitungan faktorial, permutasi, dan kombinasi menggunakan function atau fungsi. Agar program bekerja dengan baik, input variabel a harus lebih besar sama dengan variabel c, dan input variabel b lebih besar sama dengan variabel d. Berikut ini penjelasan yang lebih lanjut:
+Program ini adalah program untuk menghitung deret fibonacci dari dengan deret dari 1 sampai 10. Berikut ini penjelasan yang lebih lanjut:
 <ul>
   <li><strong>Di dalam func main()</strong>
 	<ol>
-		<li>Program memiliki variabel a, b, c dan d dengan tipe data int</li>
-		<li>Program menampilkan text perintah untuk memasukkan nilai variabel a, b, c dan d kepada user menggunakan fmt.Print.</li>
-		<li>Program memberikan input untuk nilai variabel a, b, c dan d.Setelah memasukkan input, inputan user dibaca oleh program menggunakan fmt.Scan dan &a, &b, &c, &d, lalu nilai inputan dimasukkan ke variabel a, b, c dan d secara berurutan.</li>
-		<li>Program menampilkan output untuk permutasi dari variabel a dan c menggunakan fmt.Print</li>
-		<li>Program menampilkan output untuk kombinasi dari variabel a dan c menggunakan fmt.Println, fmt.Println digunakan agar output selanjutnya berada pada line/baris baru.</li>
-		<li>Program menampilkan output untuk permutasi dari variabel b dan d menggunakan fmt.Print</li>
-		<li>Program menampilkan output untuk kombinasi dari variabel b dan d menggunakan fmt.Print</li>
+		<li>Program memiliki variabel n dengan tipe data integer</li>
+		<li>Program menampilkan text perintah untuk memasukkan nilai variabel n ke user menggunakan fmt.Print.</li>
+		<li>Program memberikan input untuk nilai variabel n. Setelah memasukkan input, inputan user dibaca oleh program menggunakan fmt.Scan dan &n, lalu nilai inputan dimasukkan ke variabel n.</li>
+		<li>Program menampilkan text bertuliskan "n: ", nantinya di sebelahnya akan ada nilai rekursif dari 1 sampai n.</li>
+		<li>Program memanggil prosedur index dengan parameter 0 dan variabel n.</li>
+		<li>Program menampilkan text bertuliskan "Sn: ", nantinya di sebelahnya akan ada nilai hasil deret fibonacci dari suku ke 1 sampai n.</li>
+		<li>Program memanggil prosedur deret dengan parameter 0 dan variabel n.</li>
 	</ol>
   </li>
-  <li><strong>Fungsi/function(func) dari faktorial, permutasi, dan kombinasi</strong>
+  <li><strong>Prosedur index, deret, dan fungsi fibonacci</strong>. Semua prosedur dan fungsi ini menggunakan rekursif forward.
 	<ol>
-		<li><strong>factorial</strong>
-		</br>Pada function ini, program menggunakan variabel n, bertipe data integer. Nilai yang dimasukkan ke function dimasukkan ke variabel n. Function ini membuat variabel baru bernama j dan diberi nilai 1, lalu membuat perulangan for dengan membuat variabel baru pada inisiasi, kondisinya i lebih kecil sama dengan n, dan updatenya i++/post-increment. kode yang tertulis di dalam for adalah variabel j dikalikan variabel i pada setiap perulangan dan nilai variabel i dimasukkan ke variabel j. Terakhir, function menggunakan return untuk mengembalikan nilai variabel j. <strong>Singkatnya, function ini menghitung faktorial dari suatu nilai menggunakan perulangan for.</strong>
+		<li><strong>Prosedur index</strong>
+		</br>Prosedur ini berfungsi untuk menunjukan suku bilangan. Prosedur ini memiliki parameter pass by value yaitu x dan n, bertipe data integer. Prosedur ini berisi base-case, yaitu:
+			<ol>
+				<li><strong>Kondisi 1 (if)</strong>
+				</br>Jika nilai variabel x sama dengan nilai variabel n, maka program akan menjalankan kode untuk menampilkan variabel x menggunakan fmt.Print. Ini adalah kode untuk output terakhir.
+				</li>
+				<li><strong>Kondisi 2 (else)</strong>
+				</br>Jika kondisi pertama tidak terpenuhi atau nilai variabel x tidak sama dengan nilai variabel n, maka program akan menjalankan kode untuk menampilkan variabel x menggunakan fmt.Print, namun di sampingnya ada spasi (" ") karena ini adalah kode untuk menampilkan teks sebelum output terakhir. Lalu kode ini memanggil prosedur index dengan parameter nilai variabel x ditambah 1, dan nilai variabel n, agar perulangan bisa dijalankan.
+				</li>
+			</ol>
 		</li>
-		<li><strong>permutation</strong>
-		</br>Pada function ini, program menggunakan variabel n dan r, bertipe data integer. Nilai yang ditujukan ke function dimasukkan ke variabel n dan r secara berurutan. Function ini membuat variabel baru bernama p dan didalamnya ada sebuah rumus faktorial dari variabel n dibagi dengan faktorial dari variabel n dikurangi variabel r. Lalu function menggunakan return untuk mengembalikan nilai variabel p.
+		<li><strong>Prosedur deret</strong>
+		</br>Prosedur ini berfungsi untuk menunjukan deret fibonacci. Prosedur ini juga memiliki parameter pass by value yaitu x dan n, bertipe data integer. Prosedur ini juga berisi base-case, yaitu:
+			<ol>
+				<li><strong>Kondisi 1 (if)</strong>
+				</br>Jika nilai variabel x sama dengan nilai variabel n, maka program akan menjalankan kode untuk menampilkan output hasil deret fibonacci dari variabel x. Jadi, program menjalankan fungsi fibonacci dari variabel x terlebih dahulu, lalu hasilnya ditampilkan menggunakan fmt.Print. Ini adalah kode untuk menampilkan output terakhir.
+				</li>
+				<li><strong>Kondisi 2 (else)</strong>
+				</br>Jika kondisi pertama tidak terpenuhi atau nilai variabel x tidak sama dengan nilai variabel n, maka program akan menjalankan kode untuk menampilkan variabel hasil deret fibonacci dari variabel x. Jadi, program menjalankan fungsi fibonacci dari variabel x terlebih dahulu, lalu hasilnya ditampilkan menggunakan fmt.Print, namun di sampingnya ada spasi (" ") karena ini adalah kode untuk menampilkan teks sebelum output terakhir. Lalu kode ini memanggil prosedur deret dengan parameter nilai variabel x ditambah 1, dan nilai variabel n, agar perulangan bisa dijalankan.
+				</li>
+			</ol>
 		</li>
-		<li><strong>combination</strong>
-		</br>Sama seperti permutation, program menggunakan variabel n dan r dan nilai dimasukkan ke masing-masing variabel secara berurutan. Function ini membuat variabel baru bernama c dan didalamnya ada sebuah rumus yaitu faktorial dari variabel n dibagi dengan faktorial variabel r, lalu dikali faktorial dari variabel n dikurangi variabel r. Lalu function menggunakan return untuk mengembalikan nilai variabel c.
+		<li><strong>Fungsi fibonacci</strong>
+		</br>Prosedur ini berfungsi untuk menghitung bilangan fibonacci. Prosedur ini juga memiliki parameter pass by value yaitu n, bertipe data integer. Prosedur ini juga berisi base-case, yaitu:
+			<ol>
+				<li><strong>Kondisi 1 (if)</strong>
+				</br>Jika nilai variabel n sama dengan 0, maka nilai yang di-return adalah 0.
+				</li>
+				<li><strong>Kondisi 2 (else-if)</strong>
+				</br>Jika nilai variabel n sama dengan 1, maka nilai yang di-return adalah 1.
+				</li>
+				<li><strong>Kondisi 3 (else)</strong>
+				</br>Jika kedua kondisi sebelumnya tidak terpenuhi, maka program akan menjalankan kondisi ini. Yaitu nilai yang di-return adalah hasil perhitungan fungsi fibonacci n-1 ditambahkan hasil perhitungan fungsi fibonacci n-2.
+				</li>
+			</ol>
 		</li>
 	</ol>
-	<li><strong>Cara kerja function</strong>
-		</br>contohnya permutation(a, c), maka yang akan terjadi adalah nilai a dimasukkan ke variabel n, nilai c dimasukkan ke variabel r dan akan menjalankan kode function permutation.
-	</li>
   </li>
 </ul>
 
-### 2. Buatlah sebuah program yang digunakan untuk menampilkan pola bintang berikut ini denganmenggunakan fungsi rekursif. N adalah masukan dari user.
+### 2. Buatlah sebuah program yang digunakan untuk menampilkan pola bintang berikut ini dengan menggunakan fungsi rekursif. N adalah masukan dari user.
 #### soal2.go
 
 ```go
@@ -117,33 +152,27 @@ func bintang(jumlah int) {
 ##### Output 
 ![Screenshot Output Unguided 1_1](https://github.com/arracheille/109082500199_Achel/blob/main/Modul5/output/output-soal2.png)
 ##### Penjelasan
-Program ini adalah program untuk menghitung fungsi f, g dan h dari variabel a, b dan c. Setelah ketiga fungsi terhitung, lalu program akan menghitung fungsi fogoh untuk variabel a, gohof untuk variabel b, dan hofog untuk variabel c. Berikut penjelasan yang lebih lanjut:
+Program ini adalah program untuk menampilkan banyaknya baris dan bintang berdasarkan nilai n. Berikut penjelasan yang lebih lanjut:
 <ul>
   <li><strong>Di dalam func main()</strong>
 	<ol>
-		<li>Program memiliki variabel a, b dan c dengan tipe data int</li>
-		<li>Program menampilkan text perintah untuk memasukkan nilai variabel a, b dan c kepada user menggunakan fmt.Print.</li>
-		<li>Program memberikan input untuk nilai variabel a, b dan c.Setelah memasukkan input, inputan user dibaca oleh program menggunakan fmt.Scan dan &a, &b, &c, lalu nilai inputan dimasukkan ke variabel a, b dan c secara berurutan.</li>
-		<li>Program menampilkan output fungsi fogoh dari variabel a menggunakan fmt.Println, fmt.Println digunakan agar output selanjutnya berada pada line/baris baru. f(g(h(a))) berarti program menghitung fungsi h dari nilai variabel a, lalu  menghitung fungsi g menggunakan hasil dari fungsi h, terakhir menghitung fungsi f menggunakan hasil dari fungsi g.</li>
-		<li>Program menampilkan output fungsi gohof dari variabel b menggunakan fmt.Println, fmt.Println digunakan agar output selanjutnya berada pada line/baris baru. g(h(f(b))) berarti program menghitung fungsi f dari nilai variabel b, lalu  menghitung fungsi h menggunakan hasil dari fungsi f, terakhir menghitung fungsi g menggunakan hasil dari fungsi h.</li>
-		<li>Program menampilkan output fungsi hofog dari variabel c menggunakan fmt.Print. h(f(g(c))) berarti program menghitung fungsi g dari nilai variabel c, lalu  menghitung fungsi f menggunakan hasil dari fungsi g, terakhir menghitung fungsi h menggunakan hasil dari fungsi f.</li>
+		<li>Program memiliki variabel n dengan tipe data integer</li>
+		<li>Program menampilkan text perintah untuk memasukkan nilai variabel n kepada user menggunakan fmt.Print.</li>
+		<li>Program memberikan input untuk nilai variabel n. Setelah memasukkan input, inputan user dibaca oleh program menggunakan fmt.Scan dan &n, lalu nilai inputan dimasukkan ke variabel n.</li>
+		<li>Program memanggil prosedur baris dengan argumen 1 dan variabel n.</li>
 	</ol>
   </li>
-    <li><strong>Fungsi/function(func) dari f, g dan h</strong>
+    <li><strong>Prosedur baris dan bintang</strong>. Kedua prosedur ini menggunakan rekursif forward.
 	<ol>
-		<li><strong>f</strong>
-		</br>Pada function ini, program menggunakan variabel x, bertipe data integer. Nilai yang dimasukkan ke function dimasukkan ke variabel x. Function ini membuat variabel baru bernama fx dan di dalamnya ada sebuah rumus aritmatika yaitu variabel x dikali variabel x. Lalu function menggunakan return untuk mengembalikan nilai variabel fx.
+		<li><strong>Prosedur baris</strong>
+		</br>Prosedur ini berfungsi untuk menampilkan banyaknya baris berdasarkan nilai variabel n. Prosedur ini memiliki parameter pass by value yaitu i dan n, bertipe data integer. Prosedur ini berisi base-case, if dengan kondisi: 
+		</br>Jika nilai variabel i kurang dari sama dengan nilai variabel n, maka program akan memanggil fungsi bintang dengan argumen variabel i. Ini berarti program mengirim banyaknya indeks ke prosedur bintang (misalnya indeks ke-1, maka pada prosedur bintang akan menampilkan "*", lalu dilanjutkan ke indeks ke-2, maka pada prosedur bintang akan menampilkan "**", dan seterusnya). Lalu ada fmt.Println() agar setiap baris bintang berada di line output yang baru. Dan program memanggil prosedur baris dengan argumen nilai variabel i ditambah 1. dan variabel n. Kondisi ini akan terus berulang sampai nilai variabel i sama dengan nilai variabel n.
 		</li>
-		<li><strong>g</strong>
-		</br>Pada function ini, program menggunakan variabel x, bertipe data integer. Nilai yang dimasukkan ke function dimasukkan ke variabel x. Function ini membuat variabel baru bernama gx dan di dalamnya ada sebuah rumus aritmatika yaitu variabel x dikurangi 2. Lalu function menggunakan return untuk mengembalikan nilai variabel gx.
-		</li>
-		<li><strong>h</strong>
-		</br>Pada function ini, program menggunakan variabel x, bertipe data integer. Nilai yang dimasukkan ke function dimasukkan ke variabel x. Function ini membuat variabel baru bernama hx dan di dalamnya ada sebuah rumus aritmatika yaitu variabel x ditambah 1. Lalu function menggunakan return untuk mengembalikan nilai variabel hx.
+		<li><strong>Prosedur bintang</strong>
+		</br>Prosedur ini berfungsi untuk menampilkan banyaknya bintang per baris berdasarkan nilai variabel n. Prosedur ini memiliki parameter pass by value yaitu jumlah, bertipe data integer. Prosedur ini berisi base-case, if dengan kondisi: 
+		</br>Jika nilai variabel jumlah lebih dari 0, maka program akan menampilkan banyaknya bintang menggunakan fmt.Print("*"). Bintang ini akan terus bertambah ke kanan berdasarkan indeks ke-i. Dan program memanggil prosedur bintang dengan argumen nilai variabel jumlah dikurangi 1.
 		</li>
 	</ol>
-	<li><strong>Cara kerja function</strong>
-		</br>contohnya f(g(h(a))), maka yang akan terjadi adalah nilai a dimasukkan ke variabel x dari function h, karena perhitungan dimulai dari function yang paling dalam. Lalu setelah program selesai menghitung function h, selanjutnya menghitung fuction g karena function h berada di dalam function g. Perhitungan dari function g adalah hasil dari function h dimasukkan ke variabel x dari function g. Setelah program selesai menghitung, terakhir, karena function g berada di dalam function f, perhitungan dari function f adalah hasil dari function g dimasukkan ke variabel x dari function f.
-	</li>
   </li>
 </ul>
 
@@ -181,43 +210,26 @@ func faktor(i, n int) {
 ##### Output 
 ![Screenshot Output Unguided 1_1](https://github.com/arracheille/109082500199_Achel/blob/main/Modul5/output/output-soal3.png)
 ##### Penjelasan
-Program ini adalah program untuk menentukan posisi sebuah titik sembarang (variabel x dan variabel y) berdasarkan dua lingkaran. Berikut penjelasan yang lebih lanjut:
+Program ini adalah program untuk menghitung/mencari faktor dari n. Berikut penjelasan yang lebih lanjut:
 <ul>
-	<li><strong>Di dalam func main()</strong>
-		<ol>
-			<li><strong>Variabel untuk lingkaran 1</strong>
-			</br>Program memiliki variabel cx1, cy1 dan r1 dengan tipe data float64. cx1 adalah titik koordinat garis x, cy1 adalah titik koordinat garis y, r1 adalah radius dari lingkaran.</li>
-			<li><strong>Variabel untuk lingkaran 2</strong>
-			</br>Program memiliki variabel cx2, cy2 dan r2 dengan tipe data float64. cx2 adalah titik koordinat garis x, cy2 adalah titik koordinat garis y, r2 adalah radius dari lingkaran.</li>
-			<li>Lalu variabel x dan y bertipe data float64, sebagai titik sembarang. Variabel output bertipe data string sebagai text output</li>
-			<li>Program menampilkan text perintah untuk memasukkan nilai seluruh variabel kecuali variabel output kepada user menggunakan fmt.Print.</li>
-			<li>Program memberikan input untuk nilai seluruh variabel kecuali variabel output. Setelah memasukkan input, inputan user dibaca oleh program menggunakan fmt.Scan dan &(variabel), lalu nilai inputan dimasukkan ke variabel seluruh variabel kecuali variabel output secara berurutan. Input untuk variabel dari lingkaran 1 dan lingkaran 2 menggunakan fmt.Scanln agar kode selanjutnya berada di line/baris baru.</li>
-			<li>Text perintah dan fmt.Scan dituliskan secara berkelompok, yang pertama untuk lingkaran 1, lalu lingkaran 2 dan titik sembarang.</li>
-			<li>Program membuat variabel bernama titik1 dengan isi variabel adalah function didalam, variabel ini menghitung function didalam dari nilai variabel cx1, cy1, r1, x dan y</li>
-			<li>Program membuat variabel bernama titik2 dengan isi variabel adalah function didalam, variabel ini menghitung function didalam dari nilai variabel cx2, cy2, r2, x dan y</li>
-		</ol>
+  <li><strong>Di dalam func main()</strong>
+	<ol>
+		<li>Program memiliki variabel n dengan tipe data integer</li>
+		<li>Program menampilkan text perintah untuk memasukkan nilai variabel n kepada user menggunakan fmt.Print.</li>
+		<li>Program memberikan input untuk nilai variabel n. Setelah memasukkan input, inputan user dibaca oleh program menggunakan fmt.Scan dan &n, lalu nilai inputan dimasukkan ke variabel n.</li>
+		<li>Program menampilkan text bertuliskan "Faktor: ", nantinya di sebelahnya akan ada nilai hasil pencarian faktor dari variabel n.</li>
+		<li>Program memanggil prosedur faktor dengan argumen 1 dan variabel n.</li>
+	</ol>
 	</li>
-    <li><strong>Fungsi/function(func) didalam dan jarak</strong>
-		<ol>
-			<li><strong>didalam</strong>
-			</br>Pada function ini, program menggunakan variabel cx, cy, r, x, y, bertipe data float64. Nilai yang dimasukkan ke function dimasukkan ke variabel cx, cy, r, x, y secara berurutan. Function ini mengecek apakah jarak antara titik dan pusat lingkaran lebih kecil sama dengan radius dengan cara menggunakan function jarak yang diberi variabel cx, cy, x, y, lalu dicek menggunakan <= r. Kode tersebut dikembalikan menggunakan return.
-			</li>
-			<li><strong>jarak</strong>
-			</br>Pada function ini, program menggunakan variabel a, b, c, d bertipe data float64. Nilai variabel cx, cy, x, y dari function didalam dimasukkan ke variabel a, b, c, d secara berurutan. <strong>Berarti a = cx, b = cy, c = x, dan d = y</strong>. Function ini menghitung akar (math.Sqrt) dari hasil variabel a dikurangi variabel c, lalu dipangkatkan 2 (menggunakan math.Pow(a-c, 2), angka 2 sebagai pangkat). Lalu ditambahkan dengan hasil variabel b dikurangi variabel d, lalu dipangkatkan 2 (menggunakan math.Pow(b-d, 2), angka 2 sebagai pangkat). Akar ini dikembalikan menggunakan return.
-			</li>
-		</ol>
+		<li><strong>Prosedur faktor</strong>. Prosedur ini menggunakan rekursif forward.
+		</br>Prosedur ini berfungsi untuk mencari apa saja faktor dari nilai variabel n. Prosedur ini memiliki parameter pass by value yaitu i dan n, bertipe data integer. Prosedur ini berisi base-case dengan kondisi: 
+			<ol>
+				<li><strong>Kondisi 1 (if)</strong>
+				</br>Jika nilai variabel i kurang dari nilai variabel n, maka program akan menjalankan sebuah kondisi untuk mengecek apakah n adalah faktor dari i. Kondisinya adalah jika nilai variabel n habis dibagi atau di-modulus nilai variabel i hasilnya 0, maka program akan menampilkan nilai variabel i tersebut dan titik spasi di sebelahnya, karena ini adalah kode sebelum nilai faktor terakhir
+				</li>
+				<li><strong>Kondisi 2 (else-if)</strong>
+				</br>Jika nilai variabel i sama dengan n, maka program akan menampilkan nilai i tersebut. Kode ini tidak ada titik spasi karena ini adalah faktor terakhir.
+				</li>
+			</ol>
 	</li>
-	<li>Setelah menghitung titik1 dan titik2, program menggunakan if-else-if untuk membandingkan kondisi:
-		<ol>
-			<li><strong>Kondisi 1 (if)</strong>
-			</br>Kondisinya adalah jika titik1 dan (&&) titik2 bernilai true, maka variabel output berisi "Titik di dalam lingkaran 1 dan 2"</li>
-			<li><strong>Kondisi 2 (else if)</strong>
-			</br>Kondisinya adalah jika hanya titik1 yang bernilai true, maka variabel output berisi "Titik di dalam lingkaran 1"</li>
-			<li><strong>Kondisi 3 (else if)</strong>
-			</br>Kondisinya adalah jika hanya titik2 yang bernilai true, maka variabel output berisi "Titik di dalam lingkaran 2"</li>
-			<li><strong>Kondisi 4 (else)</strong>
-			</br>Kondisinya adalah jika semua kondisi diatas tidak terpenuhi, atau berarti titik1 dan titik2 bernilai false, maka variabel output berisi "Titik di luar lingkaran 1 dan 2".</li>
-		</ol>
-	</li>
-	<li>Terakhir, ada fmt.Print untuk menampilkan keluaran/text dari nilai variabel output</li>
 </ul>
