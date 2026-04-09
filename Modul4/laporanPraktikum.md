@@ -1,4 +1,4 @@
-# <h1 align="center">Laporan Praktikum Modul 4 - Tugas Modul 4 Prosedur </h1>
+# <h1 align="center">Laporan Praktikum Modul 4 - Soal Latihan Modul 4 </h1>
 <p align="center">Aqilla Rachel Rabbani - 109082500199</p>
 
 ## Unguided 
@@ -89,9 +89,11 @@ Program ini adalah program untuk menghitung faktorial(factorial) dan permutasi(p
   </li>
 </ul>
 
-### 2. Diberikan tiga buah fungsi matematika yaitu f (x) = x^2, g (x) = x − 2 dan h (x) = x + 1. Fungsi komposisi (fogoh)(x) artinya adalah f(g(h(x))). Tuliskan f(x), g(x) dan h(x) dalam bentuk function. 
-### Masukan terdiri dari sebuah bilangan bulat a, b dan c yang dipisahkan oleh spasi. 
-### Keluaran terdiri dari tiga baris. Baris pertama adalah (fogoh)(a), baris kedua (gohof)(b), dan baris ketiga adalah (hofog)(c)!
+### 2. Kompetisi pemrograman tingkat nasional berlangsung ketat. Setiap peserta diberikan 8 soal yang harus dapat diselesaikan dalam waktu 5 jam saja. Peserta yang berhasil menyelesaikan soal paling banyak dalam waktu paling singkat adalah pemenangnya.
+### Buat program gema yang mencari pemenang dari daftar peserta yang diberikan. Program harus dibuat modular, yaitu dengan membuat prosedur hitungSkor yang mengembalikan total soal dan total skor yang dikerjakan oleh seorang peserta, melalui parameter formal. Pembacaan nama peserta dilakukan di program utama, sedangkan waktu pengerjaan dibaca di dalam prosedur.
+### prosedure hitungSkor(in/out soal, skor : integer)
+### Setiap baris masukan dimulai dengan satu string nama peserta tersebut diikuti dengan adalah 8 integer yang menyatakan berapa lama (dalam menit) peserta tersebut menyelesaikan soal. Jika tidak berhasil atau tidak mengirimkan jawaban maka otomatis dianggap menyelesaikan dalam waktu 5 jam 1 menit (301 menit). 
+### Satu baris keluaran berisi nama pemenang, jumlah soal yang diselesaikan, dan nilai yang diperoleh. Nilai adalah total waktu yang dibutuhkan untuk menyelesaikan soal yang berhasil diselesaikan.
 #### soal2.go
 
 ```go
