@@ -89,7 +89,7 @@ func frekuensi(t tabelInt, n, cari int) int {
 
 func main() {
 	var tab tabelInt
-	var n int
+	var n, x, idx, cari int
 
 	array(&tab, &n)
 
@@ -99,12 +99,10 @@ func main() {
 
 	tampilGenap(tab, n)
 
-	var x int
 	fmt.Print("Masukkan nilai x untuk kelipatan: ")
 	fmt.Scan(&x)
 	tampilKelipatanX(tab, n, x)
 
-	var idx int
 	fmt.Print("Masukkan indeks yang akan dihapus: ")
 	fmt.Scan(&idx)
 	hapusElemen(&tab, &n, idx)
@@ -115,7 +113,6 @@ func main() {
 
 	fmt.Printf("Standar deviasi: %.2f\n", stdDeviasi(tab, n))
 
-	var cari int
 	fmt.Print("Cari frekuensi bilangan: ")
 	fmt.Scan(&cari)
 	fmt.Printf("Frekuensi %d: %d\n", cari, frekuensi(tab, n, cari))

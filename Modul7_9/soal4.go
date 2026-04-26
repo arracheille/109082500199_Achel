@@ -7,19 +7,18 @@ const NMAX int = 127
 type tabel [NMAX]rune
 
 func isiArray(t *tabel, n *int) {
-	*n = 0
-	fmt.Print("Teks : ")
-	for *n < NMAX {
-		var c rune
-		fmt.Scanf(" %c", &c)
-		if c == '.' {
-			break
-		}
-		t[*n] = c
-		(*n)++
-	}
+    var s string
+    *n = 0
+    fmt.Print("Teks : ")
+    for *n < NMAX {
+        fmt.Scan(&s) 
+        if s == "." {
+            break
+        }
+        t[*n] = rune(s[0])
+        (*n)++
+    }
 }
-
 func cetakArray(t tabel, n int) {
 	for i := 0; i < n; i++ {
 		if i > 0 {

@@ -236,7 +236,7 @@ func frekuensi(t tabelInt, n, cari int) int {
 
 func main() {
 	var tab tabelInt
-	var n int
+	var n, x, idx, cari int
 
 	array(&tab, &n)
 
@@ -246,12 +246,10 @@ func main() {
 
 	tampilGenap(tab, n)
 
-	var x int
 	fmt.Print("Masukkan nilai x untuk kelipatan: ")
 	fmt.Scan(&x)
 	tampilKelipatanX(tab, n, x)
 
-	var idx int
 	fmt.Print("Masukkan indeks yang akan dihapus: ")
 	fmt.Scan(&idx)
 	hapusElemen(&tab, &n, idx)
@@ -262,7 +260,6 @@ func main() {
 
 	fmt.Printf("Standar deviasi: %.2f\n", stdDeviasi(tab, n))
 
-	var cari int
 	fmt.Print("Cari frekuensi bilangan: ")
 	fmt.Scan(&cari)
 	fmt.Printf("Frekuensi %d: %d\n", cari, frekuensi(tab, n, cari))
@@ -276,6 +273,127 @@ func main() {
 ![Screenshot Output Unguided 1_1](https://github.com/arracheille/109082500199_Achel/blob/main/Modul7_9/output/soal2.png)
 
 ##### Penjelasan
+<ul>
+	<li><strong>Tipe data tabelInt</strong>
+	</br>tabelInt adalah tipe data array dengan kapasitas array_max (100) elemen bertipe integer. Kapasitas array_max bertipe data integer dengan nilai 100, karena menggunakan const, berarti kapasitasnya tidak bisa berubah (immutable).
+	</li>
+	<li><strong>Di dalam func main()</strong>
+		<ol>
+			<li>Program memiliki variabel tab dengan tipe data tabelInt dan variabel n dengan tipe data integer</li>
+			<li>Program menampilkan text perintah untuk memasukkan nilai variabel n ke user menggunakan fmt.Print.</li>
+			<li>Program memberikan input untuk nilai variabel n. Setelah memasukkan input, inputan user dibaca oleh program menggunakan fmt.Scan dan &n, lalu nilai inputan dimasukkan ke variabel n.</li>
+			<li>Program memanggil prosedur array dengan &tab dan &n sebagai parameter aktual.</li>
+			<li>Program memanggil fungsi tampilSemua dengan argumen variabel tab dan n.</li>
+			<li>Program memanggil fungsi tampilGanjil dengan argumen variabel tab dan n.</li>
+			<li>Program memanggil fungsi tampilGenap dengan argumen variabel tab dan n.</li>
+			<li>Program menampilkan text perintah untuk memasukkan nilai x untuk kelipatan (x) menggunakan fmt.Print.</li>
+			<li>Program memberikan input untuk nilai variabel x. Inputan user dibaca oleh program menggunakan fmt.Scan dan &x, dan dimasukkan ke variabel x.</li>
+			<li>Program memanggil fungsi tampilKelipatanX dengan argumen variabel tab, n, dan x.</li>
+			<li>Program menampilkan text perintah untuk memasukkan nilai index yang akan dihapus (idx) menggunakan fmt.Print.</li>
+			<li>Program memberikan input untuk nilai variabel idx. Inputan user dibaca oleh program menggunakan fmt.Scan dan &idx, dan dimasukkan ke variabel idx.</li>
+			<li>Program memanggil prosedur hapusElemen dengan parameter aktual &tab dan &n, dan juga argumen variabel idx.</li>
+			<li>Program memanggil fungsi tampilSemua dengan argumen tab dan n.</li>
+			<li>Program menampilkan output menggunakan printf (print format) untuk menampilkan hasil dari fungsi rataRata dengan argumen tab dan n.</li>
+			<li>Program menampilkan output menggunakan printf (print format) untuk menampilkan hasil dari fungsi stdDeviasi dengan argumen tab dan n.</li>
+			<li>Program menampilkan text perintah untuk mencari frekuensi bilangan (cari) menggunakan fmt.Print.</li>
+			<li>Program memberikan input untuk nilai variabel cari. Inputan user dibaca oleh program menggunakan fmt.Scan dan &cari, dan dimasukkan ke variabel cari.</li>
+			<li>Program menampilkan output menggunakan printf (print format) untuk menampilkan nilai variabel cari dan juga hasil dari fungsi frekuensi dengan argumen tab, n dan cari.</li>
+		</ol>
+	</li>
+	<li><strong>Prosedur dan fungsi</strong>. 
+		<ol>
+			<li><strong>Prosedur array</strong>
+			</br>Prosedur ini berfungsi untuk memasukkan array. Prosedur ini memiliki parameter pass by reference yaitu t bertipe data tabelInt dan n bertipe data integer. Prosedur ini berisi input untuk memasukkan jumlah elemen/array dengan variabel n. Prosedur ini juga berisi perulangan for:
+				<ol type="a">
+					<li><strong>Inisiasi: </strong>program membuat variabel baru bernama i menggunakan “:=” dan diberi nilai 0.</li>
+					<li><strong>Kondisi: </strong>nilai variabel i kurang dari n.</li>
+					<li><strong>Update: </strong>i++ (Post-increment).</li>
+					<li><strong>Isi perulangan: </strong>teks untuk menampilkan iterasi elemen dari variabel i menggunakan %d (format bilangan bulat) dan fmt.Printf (print format). Input menggunakan fmt.Scan untuk memasukkan nilai variabel t, masing-masing nilai variabel ini akan dimasukkan ke indeks yang sesuai dengan nilai variabel i. Misal perulangan ke-1 elemennya adalah 3, tapi karena ini adalah perulangan ke-1 dan nilai awal variabel i adalah 0, maka 3 akan dimasukkan ke array ke 0.</li>
+				</ol>
+			</li>
+			<li><strong>Prosedur tampilSemua</strong>
+			Prosedur ini berfungsi untuk menampilkan semua array. Prosedur ini memiliki parameter pass by value yaitu t bertipe data tabelInt dan n bertipe data integer. Prosedur ini juga berisi perulangan for:
+				<ol type="a">
+					<li><strong>Inisiasi: </strong>program membuat variabel baru bernama i menggunakan “:=” dan diberi nilai 0.</li>
+					<li><strong>Kondisi: </strong>nilai variabel i kurang dari n.</li>
+					<li><strong>Update: </strong>i++ (Post-increment).</li>
+					<li><strong>Isi perulangan: </strong>teks untuk menampilkan array variabel t menggunakan %d (format bilangan bulat) dan fmt.Printf (print format).</li>
+				</ol>
+			</br>Pada akhir kode, terdapat fmt.Println agar kode selanjutnya bisa ditulis di baris baru.
+			</li>
+			<li><strong>Prosedur tampilGanjil</strong>
+			Prosedur ini berfungsi untuk menampilkan semua elemen array yang ganjil. Prosedur ini memiliki parameter pass by value yaitu t bertipe data tabelInt dan n bertipe data integer. Prosedur ini berisi perulangan for:
+				<ol type="a">
+					<li><strong>Inisiasi: </strong>program membuat variabel baru bernama i menggunakan “:=” dan diberi nilai 1.</li>
+					<li><strong>Kondisi: </strong>nilai variabel i kurang dari n.</li>
+					<li><strong>Update: </strong>i+= 2, ini berarti pada setiap perulangan i akan bertambah 2, namun karena nilai awal variabel i adalah 1, maka nilai yang akan terus bertambah tetap ganjil.</li>
+					<li><strong>Isi perulangan: </strong>teks untuk menampilkan array variabel t menggunakan %d (format bilangan bulat) dan fmt.Printf (print format).</li>
+				</ol>
+			</br>Pada akhir kode, terdapat fmt.Println agar kode selanjutnya bisa ditulis di baris baru.
+			</li>
+			<li><strong>Prosedur tampilGenap</strong>
+			Prosedur ini berfungsi untuk menampilkan semua elemen array yang genap. Prosedur ini memiliki parameter pass by value yaitu t bertipe data tabelInt dan n bertipe data integer. Prosedur ini berisi perulangan for:
+				<ol type="a">
+					<li><strong>Inisiasi: </strong>program membuat variabel baru bernama i menggunakan “:=” dan diberi nilai 0.</li>
+					<li><strong>Kondisi: </strong>nilai variabel i kurang dari n.</li>
+					<li><strong>Update: </strong>i+= 2, ini berarti pada setiap perulangan i akan bertambah 2.</li>
+					<li><strong>Isi perulangan: </strong>teks untuk menampilkan array variabel t menggunakan %d (format bilangan bulat) dan fmt.Printf (print format).</li>
+				</ol>
+			</br>Pada akhir kode, terdapat fmt.Println agar kode selanjutnya bisa ditulis di baris baru.
+			</li>
+			<li><strong>Prosedur tampilKelipatanX</strong>
+			Prosedur ini berfungsi untuk menampilkan elemen yang merupakan kelipatan dari variabel x. Prosedur ini memiliki parameter pass by value yaitu t bertipe data tabelInt, dan n dan x bertipe data integer. Isi dari prosedur adalah teks untuk menampilkan nilai variabel x menggunakan %d (format bilangan bulat) dan fmt.Printf (print format). Prosedur ini juga berisi perulangan:
+				<ol type="a">
+					<li><strong>Inisiasi: </strong>program membuat variabel baru bernama i menggunakan “:=” dan diberi nilai 0.</li>
+					<li><strong>Kondisi: </strong>nilai variabel i kurang dari n.</li>
+					<li><strong>Update: </strong>i++ (Post-increment).</li>
+					<li><strong>Isi perulangan: </strong>if dengan kondisi jika variabel i di-modulus variabel x sama dengan 0 maka program akan menampilkan teks untuk menampilkan array elemen yang kelipatan dari variabel x menggunakan %d (format bilangan bulat) dan fmt.Printf (print format).</li>
+				</ol>
+			</br>Pada akhir kode, terdapat fmt.Println agar kode selanjutnya bisa ditulis di baris baru.
+			</li>
+			<li><strong>Prosedur hapusElemen</strong>
+			Fungsi ini berfungsi untuk menghapus elemen dari array berdasarkan inputan user. Fungsi ini memiliki parameter pass by reference yaitu t bertipe data tabelInt, dan n bertipe data integer, ada juga parameter pass by value yaitu idx bertipe data integer. Prosedur ini berisi perulangan:
+				<ol type="a">
+					<li><strong>Inisiasi: </strong>program membuat variabel baru bernama i menggunakan “:=” dan diberi nilai variabel idx.</li>
+					<li><strong>Kondisi: </strong>nilai variabel i kurang dari variabel n dikurangi 1.</li>
+					<li><strong>Update: </strong>i++ (Post-increment).</li>
+					<li><strong>Isi perulangan: </strong>array variabel t yang berisi array variabel t dengan index yang ditambah 1</li>
+				</ol>
+			</br>Pada akhir kode, terdapat *n-- yang berarti nilai n dikurangi 1 pada setiap perulangan.
+			</li>
+			<li><strong>Fungsi rataRata</strong>
+			Fungsi ini berfungsi untuk menghitung rata-rata dari array. Fungsi ini memiliki parameter t bertipe data tabelInt, dan n bertipe data integer, tipe returnnya adalah float64. Fungsi membuat variabel baru bernama sum dengan nilai 0. Fungsi ini juga berisi perulangan:
+				<ol type="a">
+					<li><strong>Inisiasi: </strong>program membuat variabel baru bernama i menggunakan “:=” dan diberi nilai 0.</li>
+					<li><strong>Kondisi: </strong>nilai variabel i kurang dari variabel n.</li>
+					<li><strong>Update: </strong>i++ (Post-increment).</li>
+					<li><strong>Isi perulangan: </strong>nilai variabel sum yang ditambahkan dengan elemen array t pada setiap perulangan.</li>
+				</ol>
+			</br>Pada akhir kode, fungsi me-return hasil rata-rata yaitu konversi float64 dari variabel sum dibagi dengan konversi float64 dari variabel n.
+			</li>
+			<li><strong>Fungsi stdDeviasi</strong>
+			Fungsi ini berfungsi untuk menghitung standar deviasi dari array. Fungsi ini memiliki parameter t bertipe data tabelInt, dan n bertipe data integer, tipe returnnya adalah float64. Fungsi membuat variabel baru bernama mean menggunakan := dan diberi nilai yaitu hasil dari prosedur rataRata dengan argumen t dan n, dan juga variabel sum dengan nilai 0.0. Fungsi ini juga berisi perulangan:
+				<ol type="a">
+					<li><strong>Inisiasi: </strong>program membuat variabel baru bernama i menggunakan “:=” dan diberi nilai 0.</li>
+					<li><strong>Kondisi: </strong>nilai variabel i kurang dari variabel n.</li>
+					<li><strong>Update: </strong>i++ (Post-increment).</li>
+					<li><strong>Isi perulangan: </strong>variabel baru bernama diff menggunakan := dan diberi nilai yaitu konversi ke float64 dari array t dikurangi mean. Dan nilai variabel sum yang ditambahkan dengan nilai variabel diff dikali variabel diff pada setiap perulangan.</li>
+				</ol>
+			</br>Pada akhir kode, fungsi me-return hasil rata-rata yaitu math.Sqrt/akar dari variabel sum dibagi dengan konversi float64 dari variabel n.
+			</li>
+			<li><strong>Fungsi frekuensi</strong>
+			Fungsi ini berfungsi untuk menghitung standar deviasi dari array. Fungsi ini memiliki parameter t bertipe data tabelInt, dan n dan cari bertipe data integer, tipe returnnya adalah integer. Fungsi membuat variabel baru bernama freq menggunakan := dan diberi 0. Fungsi ini juga berisi perulangan:
+				<ol type="a">
+					<li><strong>Inisiasi: </strong>program membuat variabel baru bernama i menggunakan “:=” dan diberi nilai 0.</li>
+					<li><strong>Kondisi: </strong>nilai variabel i kurang dari variabel n.</li>
+					<li><strong>Update: </strong>i++ (Post-increment).</li>
+					<li><strong>Isi perulangan: </strong>if dengan kondisi jika array t nilainya sama dengan variabel cari, maka variabel frequensi bertambah 1 pada setiap perulangan</li>
+				</ol>
+			</br>Pada akhir kode, fungsi me-return variabel freq.
+			</li>
+		</ol>
+	</li>
+</ul>
 
 ### 3. Sebuah program digunakan untuk menyimpan dan menampilkan nama-nama klub yang memenangkan pertandingan bola pada suatu grup pertandingan. Buatlah program yang digunakan untuk merekap skor pertandingan bola 2 buah klub bola yang berlaga.
 ### Pertama-tama program meminta masukan nama-nama klub yang bertanding, kemudian program meminta masukan skor hasil pertandingan kedua klub tersebut. Yang disimpan dalam array adalah nama-nama klub yang menang saja.
@@ -353,8 +471,8 @@ Program ini adalah program untuk menyimpan dan menampilkan nama-nama klub yang m
 			<li>Program membuat variabel baru bernama pertandingan menggunakan := dan diberi nilai 1</li>
 			<li>Program membuat perulangan for tanpa inisiasi, di dalam perulangan for terdapat:
 				<ol type="a">
-					<li>Text perintah untuk memasukkan nilai variabelskorb_a dan skor_b kepada user menggunakan fmt.Printf (print format). Print ini berisi variabel pertandingan</li>
-					<li>Input untuk nilai variabel skor_a dan skor_b. Setelah memasukkan input, inputan user dibaca oleh program menggunakan fmt.Scan dan &skor_a, &klub_b, lalu nilai inputan dimasukkan ke variabel skor_a dan klub_b secara berurutan.</li>
+					<li>Text perintah untuk memasukkan nilai variabel skor_a dan skor_b kepada user menggunakan fmt.Printf (print format). Print ini berisi variabel pertandingan</li>
+					<li>Input untuk nilai variabel skor_a dan skor_b. Setelah memasukkan input, inputan user dibaca oleh program menggunakan fmt.Scan dan &skor_a, &skor_b, lalu nilai inputan dimasukkan ke variabel skor_a dan skor_b secara berurutan.</li>
 					<li>Kondisi if, dimana jika variabel skor_a kurang dari 0 atau skor_b kurang dari 0 maka perulangan akan berhenti</li>
 					<li>Kondisi if dengan kondisi 1: jika skor a lebih besar dari skor b, maka variabel hasil berisi klub_a, kondisi 2: jika skor b lebih besar dari skor a maka variabel hasil berisi klub_b, kondisi 3: jika kedua kondisi sebelumnya tidak terpenuhi maka variabel hasil berisi teks "Draw".</li>
 					<li>Pada bagian akhir for dari n++ dan pertandingan++ yang berarti pada setiap perulangan nilai variabel n dan pertandingan bertambah 1</li>
@@ -423,19 +541,18 @@ const NMAX int = 127
 type tabel [NMAX]rune
 
 func isiArray(t *tabel, n *int) {
-	*n = 0
-	fmt.Print("Teks : ")
-	for *n < NMAX {
-		var c rune
-		fmt.Scanf(" %c", &c)
-		if c == '.' {
-			break
-		}
-		t[*n] = c
-		(*n)++
-	}
+    var s string
+    *n = 0
+    fmt.Print("Teks : ")
+    for *n < NMAX {
+        fmt.Scan(&s) 
+        if s == "." {
+            break
+        }
+        t[*n] = rune(s[0])
+        (*n)++
+    }
 }
-
 func cetakArray(t tabel, n int) {
 	for i := 0; i < n; i++ {
 		if i > 0 {
@@ -488,6 +605,48 @@ func main() {
 
 ##### Output
 
-![Screenshot Output Unguided 1_1](https://github.com/arracheille/109082500199_Achel/blob/main/Modul7_9/output/soal4.png)
+![Screenshot Output Unguided 1_1](https://github.com/arracheille/109082500199_Achel/blob/main/Modul7_9/output/soal4_2.png)
 
 ##### Penjelasan
+<ul>
+	<li><strong>Tipe data tabel</strong>
+	</br>tabel adalah tipe data array dengan kapasitas NMAX (127) elemen bertipe rune. Kapasitas NMAX bertipe data integer dengan nilai 127, karena menggunakan const, berarti kapasitasnya tidak bisa berubah (immutable).
+	</li>
+	<li><strong>Di dalam func main()</strong>
+		<ol>
+			<li>Program memiliki variabel tab dengan tipe data tabel, dan variabel m dengan tipe data integer</li>
+			<li>Program memanggil prosedur isiArray dengan &tab dan &m sebagai parameter aktual.</li>
+			<li>Program membuat variabel baru bernama isPalin menggunakan := dan isinya adalah fungsi palindrom dengan argumen tab dan m</li>
+			<li>Program memanggil prosedur balikanArray dengan &tab sebagai parameter aktual dan argumen variabel m.</li>
+			<li>Program memanggil prosedur cetakArray dengan argumen tab dan m.</li>
+			<li>Program menampilkan hasil palindrom dari variabel isPalin menggunakan %v (format boolean) dan fmt.Printf (print format).</li>
+		</ol>
+	</li>
+	<li><strong>Prosedur dan fungsi</strong>
+		<ol>
+			<li>Prosedur <strong>isiArray</strong>
+			</br>Prosedur ini memiliki parameter pass by reference yaitu t dengan tipe data integer, dan n dengan tipe data integer. Karena variabel t adalah pointer to int, maka untuk mengaksesnya menggunakan simbol bintang (*). Pada prosedur ini terdapat variabel s bertipe data string, dan juga variabel n yang diberi nilai o, lalu prosedur terdapat perulangan for:
+				<ol type="a">
+					<li><strong>Inisiasi: </strong>variabel n lebih kecil dari variabel NMAX. Berarti perulangan hanya berjalan jika variabel n lebih kecil daripada variabel NMAX.</li>
+					<li><strong>Isi perulangan: </strong>input variabel s menggunakan fmt.Scanf (scan format) untuk mendapatkan karakter teks dan kemudian akan dikonversi ke rune dan dimasukkan ke array t (index variabel n), perulangan akan berakhir jika terdapat "." pada saat memasukkan input. (*n)++ berarti nilai variabel n bertambah 1 pada setiap perulangan</li>
+				</ol>
+			</li>
+			<li>Prosedur <strong>cetakArray</strong>
+			</br>Prosedur ini memiliki parameter pass by value yaitu t dengan tipe data tabel dan n dengan tipe data integer. Prosedur ini berisi perulangan:
+				<ol type="a">
+					<li><strong>Inisiasi: </strong>program membuat variabel baru bernama i menggunakan “:=” dan diberi nilai 0.</li>
+					<li><strong>Kondisi: </strong>nilai variabel i kurang dari variabel n.</li>
+					<li><strong>Update: </strong>i++ (Post-increment).</li>
+					<li><strong>Isi perulangan: </strong>if dengan kondisi jika i lebih dari 0 maka menampilkan spasi, lalu menampilkan elemen array t menggunakan %c dan fmt.Printf (print format)</li>
+				</ol>
+			</br>Pada akhir kode, terdapat fmt.Println agar output selanjutnya berada pada baris baru
+			</li>
+			<li>Prosedur <strong>balikanArray</strong>
+			</br>Prosedur ini memiliki parameter pass by reference yaitu t dengan tipe data integer, dan n dengan tipe data integer. Karena variabel t adalah pointer to int, maka untuk mengaksesnya menggunakan simbol bintang (*). Prosedur ini berfungsi untuk membalikkan elemen array menggunakan perulangan for dengan cara membuat 2 variabel baru bernama i dan j, lalu menukar nilainya pada setiap perulangan, array i dan array j = array j dan array i. 
+			</li>
+			<li>Fungsi <strong>palindrom</strong>
+			</br>Fungsi ini memiliki parameter pass by value yaitu t dengan tipe data integer, dan n dengan tipe data integer, return valuenya adalah boolean. Pada fungsi ini, terdapat variabel bernama temp, lalu terdapat perulangan for dengan inisiasi, kondisi dan update sama dengan prosedur cetakArray dengan isi perulangan adalah nilai array temp sama dengan array t. Lalu program memanggil prosedur balikanArray dengan &temp sebagai parameter aktual dan n sebagai argumen. Fungsi memanggil perulangan for lagi dengan inisiasi, kondisi dan update sama dengan perulangan sebelumnya, dan isi perulangan adalah if dengan kondisi jika array t tidak sama dengan array temp maka return false, dan pada akhir fungsi return true. 
+			</li>
+		</ol>
+	</li>
+</ul>
