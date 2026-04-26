@@ -80,7 +80,7 @@ func main() {
 
 ##### Output
 
-![Screenshot Output Unguided 1_1](https://github.com/arracheille/109082500199_Achel/blob/main/Modul7_9/output/output-soal1.png)
+![Screenshot Output Unguided 1_1](https://github.com/arracheille/109082500199_Achel/blob/main/Modul7_9/output/soal1.png)
 
 ##### Penjelasan
 Program ini adalah program untuk menentukan posisi sebuah titik sembarang (variabel x dan variabel y) berdasarkan dua lingkaran. Berikut penjelasan yang lebih lanjut:
@@ -273,7 +273,7 @@ func main() {
 
 ##### Output
 
-![Screenshot Output Unguided 1_1](https://github.com/arracheille/109082500199_Achel/blob/main/Modul7_9/output/output-soal2.png)
+![Screenshot Output Unguided 1_1](https://github.com/arracheille/109082500199_Achel/blob/main/Modul7_9/output/soal2.png)
 
 ##### Penjelasan
 
@@ -334,7 +334,7 @@ func main() {
 
 ##### Output
 
-![Screenshot Output Unguided 1_1](https://github.com/arracheille/109082500199_Achel/blob/main/Modul7_9/output/output-soal3.png)
+![Screenshot Output Unguided 1_1](https://github.com/arracheille/109082500199_Achel/blob/main/Modul7_9/output/soal3.png)
 
 ##### Penjelasan
 
@@ -488,6 +488,6 @@ func main() {
 
 ##### Output
 
-![Screenshot Output Unguided 1_1](https://github.com/arracheille/109082500199_Achel/blob/main/Modul7_9/output/output-soal4.png)
+![Screenshot Output Unguided 1_1](https://github.com/arracheille/109082500199_Achel/blob/main/Modul7_9/output/soal4.png)
 
 ##### Penjelasan
