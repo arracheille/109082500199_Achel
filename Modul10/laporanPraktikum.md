@@ -250,7 +250,7 @@ Program ini adalah program untuk mencari rata-rata berat ikan dari setiap wadah.
                 Return/kembalian dari fungsi ini adalah hasil dari variabel total dibagi konversi float64 dari variabel jumlahWadah.
             </li>
             <li>Prosedur <strong>beratPerWadah</strong>
-                <br/>Prosedur ini adalah prosedur untuk menghitung rata-rata berat per wadah. Prosedur ini memiliki parameter pass by reference yaitu jumlahWadah dengan tipe data integer, dan wadah dengan tipe data arrWadah. Kedua parameter tersebut diakses menggunakan simbol bintang (*) karena merupakan pointer ke tipe datanya. Di dalam prosedur ini terdapat:
+                <br/>Prosedur ini adalah prosedur untuk menghitung menampilkan berat ikan per wadah. Prosedur ini memiliki parameter pass by reference yaitu jumlahWadah dengan tipe data integer, dan wadah dengan tipe data arrWadah. Kedua parameter tersebut diakses menggunakan simbol bintang (*) karena merupakan pointer ke tipe datanya. Di dalam prosedur ini terdapat:
                 <ol>
                     <li>Teks menggunakan fmt.Print yang bertuliskan "Total berat per wadah: ".</li>
                     <li>Perulangan for dengan inisiasi membuat variabel baru bernama i menggunakan := dan diberi value 0, kondisi variabel i lebih kecil dari value variabel jumlahWadah, update i++ (Post-increment).</li>
