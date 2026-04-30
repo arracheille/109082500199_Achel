@@ -15,10 +15,10 @@ func inputIkan(ikan *arrIkan, x *int, y *int) {
 }
 
 func hitungWadah(ikan arrIkan, x int, y int, wadah *arrWadah) int {
-	var total float64 = 0
 	jumlahWadah := (x + y - 1) / y
-
+	
 	for w := 0; w < jumlahWadah; w++ {
+		var total float64 = 0
 		for i := w * y; i < (w+1)*y && i < x; i++ {
 			total = total + ikan[i]
 		}

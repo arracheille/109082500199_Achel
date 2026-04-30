@@ -28,28 +28,28 @@ func jumlah(jumlah_kelinci *anak_kelinci, n *int) {
 	}
 }
 
-func berat(K anak_kelinci, n int) int {
-	var index int = 0
+func berat(jumlah_kelinci anak_kelinci, n int) int {
+	var i int = 0
 	var j int = 1
 	for j < n {
-		if K[index] < K[j] {
-			index = j
+		if jumlah_kelinci[i] < jumlah_kelinci[j] {
+			i = j
 		}
 		j = j + 1
 	}
-	return index
+	return i
 }
 
-func ringan(K anak_kelinci, n int) int {
-    var index int = 0
+func ringan(jumlah_kelinci anak_kelinci, n int) int {
+    var i int = 0
     var j int = 1
     for j < n { 
-        if K[index] > K[j] {
-            index = j
+        if jumlah_kelinci[i] > jumlah_kelinci[j] {
+            i = j
         }
         j = j + 1
     }
-    return index
+    return i
 }
 
 func main() {
@@ -78,7 +78,7 @@ Program ini adalah program untuk mencari nilai minimum dan maksimum dari array a
 
 <ul>
     <li>Tipe array <strong>anak_kelinci</strong>
-    <br/>Program memiliki array bernama nama_kelinci dengan kapasitas 1000 dan tipe data float64.
+    <br/>Program memiliki array bernama anak_kelinci dengan kapasitas 1000 dan tipe data float64.
     </li>
     <li><strong>Di dalam func main()</strong>
         <ol>
@@ -98,7 +98,7 @@ Program ini adalah program untuk mencari nilai minimum dan maksimum dari array a
                 <ol>
                     <li>Teks menggunakan fmt.Print untuk menampilkan teks perintah memasukkan jumlah kelinci ke user.</li>
                     <li>Input menggunakan fmt.Scan, inputan dimasukkan ke variabel n.</li>
-                    <li>Perulangan for dengan inisiasi membuat variabel baru bernama i menggunakan := dan diberi value 0, kondisi variabel i lebih kecil dari variabel n, update i++ (Post-increment).</li>
+                    <li>Perulangan for dengan inisiasi membuat variabel baru bernama i menggunakan := dan diberi value 0, kondisi variabel i lebih kecil dari value variabel n, update i++ (Post-increment).</li>
                     <li>Isi dari perulangan ini adalah teks yang menampilkan index berat kelinci menggunakan fmt.Printf dan format %d dari variabel i+1. Dan juga input menggunakan fmt.Scan untuk array jumlah_kelinci. Lalu inputan dibaca oleh program menggunakan fmt.Scan dan &jumlah_kelinci[i], lalu nilai inputan dimasukkan ke array jumlah_kelinci berdasarkan index ([i]) secara berurutan.</li>
                 </ol>
             </li>
@@ -152,10 +152,10 @@ func inputIkan(ikan *arrIkan, x *int, y *int) {
 }
 
 func hitungWadah(ikan arrIkan, x int, y int, wadah *arrWadah) int {
-	jumlahWadah := (x + y - 1) / y
+    jumlahWadah := (x + y - 1) / y
 
 	for w := 0; w < jumlahWadah; w++ {
-		var total float64 = 0
+        var total float64 = 0
 		for i := w * y; i < (w+1)*y && i < x; i++ {
 			total = total + ikan[i]
 		}
@@ -226,18 +226,17 @@ Program ini adalah program untuk mencari rata-rata berat ikan dari setiap wadah.
                 <ol>
                     <li>Teks menggunakan fmt.Print untuk menampilkan perintah memasukkan jumlah ikan isi per wadah ke user.</li>
                     <li>Input menggunakan fmt.Scan untuk variabel x dan y, lalu hasil input dimasukkan ke variabel x dan y secara berurutan.</li>
-                    <li>Perulangan for dengan inisiasi membuat variabel baru bernama i menggunakan := dan diberi value 0, kondisi variabel i lebih kecil dari variabel x, update i++ (Post-increment).</li>
+                    <li>Perulangan for dengan inisiasi membuat variabel baru bernama i menggunakan := dan diberi value 0, kondisi variabel i lebih kecil dari value variabel x, update i++ (Post-increment).</li>
                     <li>Isi dari perulangan ini adalah teks yang menampilkan index berat ikan menggunakan fmt.Printf dan format %d dari variabel i+1. Dan juga input menggunakan fmt.Scan untuk array ikan. Lalu inputan dibaca oleh program menggunakan fmt.Scan dan &ikan[i], lalu nilai inputan dimasukkan ke array ikan berdasarkan index ([i]) secara berurutan.</li>
                 </ol>
             </li>
             <li>Fungsi <strong>hitungWadah</strong>
                 <br/>Fungsi ini adalah fungsi untuk menghitung total berat ikan di setiap wadah. Fungsi ini memiliki parameter pass by value yaitu ikan dengan tipe data arrIkan, x dan y dengan tipe data integer dan parameter pass by reference yaitu wadah dengan tipe data arrWadah. Parameter wadah diakses menggunakan simbol bintang (*) karena merupakan pointer ke tipe datanya. Tipe data yang dikembalikan adalah integer. Di dalam Fungsi ini terdapat:
                 <ol>
-                    <li>Variabel total dengan tipe data float64 dan diberi value 0.</li>
                     <li>Membuat variabel baru menggunakan := dengan value (x + y - 1) dibagi y.</li>
-                    <li>Perulangan for dengan inisiasi membuat variabel baru bernama w menggunakan := dan diberi value 0, kondisi variabel w lebih kecil dari variabel jumlahWadah, update w++ (Post-increment).</li>
-                    <li>Lalu di dalam perulangan tersebut terdapat perulangan for kedua, dengan inisiasi membuat variabel baru bernama i menggunakan := dan diberi value variabel w dikali i, kondisi variabel i lebih kecil dari variabel w ditambah 1 lalu dikali y dan (&&) variabel i lebih kecil dari variabel x, update i++ (Post-increment). Isi dari perulangan ini adalah variabel total dengan value variabel total ditambah elemen array ikan[i]</li>
-                    <li>Lalu <strong>dibawah perulangan kedua, dan di dalam perulangan pertama</strong> terdapat array wadah[w] dengan value total</li>
+                    <li>Perulangan for dengan inisiasi membuat variabel baru bernama w menggunakan := dan diberi value 0, kondisi variabel w lebih kecil dari variabel jumlahWadah, update w++ (Post-increment). Isi dari perulangan for ini adalah deklarasi variabel total dengan tipe data float64 dan diberi value 0.</li>
+                    <li>Lalu di dalam perulangan tersebut terdapat perulangan for kedua, dengan inisiasi membuat variabel baru bernama i menggunakan := dan diberi value variabel w dikali y, kondisi variabel i lebih kecil dari variabel w ditambah 1 lalu dikali y dan (&&) variabel i lebih kecil dari variabel x, update i++ (Post-increment). Isi dari perulangan ini adalah variabel total dengan value variabel total ditambah elemen array ikan[i]</li>
+                    <li>Pada baris akhir perulangan pertama, <strong>di luar perulangan kedua</strong>, terdapat array wadah[w] dengan value total</li>
                     <li>Return dari fungsi ini adalah variabel jumlahWadah</li>
                 </ol>
             </li>
@@ -254,7 +253,7 @@ Program ini adalah program untuk mencari rata-rata berat ikan dari setiap wadah.
                 <br/>Prosedur ini adalah prosedur untuk menghitung rata-rata berat per wadah. Prosedur ini memiliki parameter pass by reference yaitu jumlahWadah dengan tipe data integer, dan wadah dengan tipe data arrWadah. Kedua parameter tersebut diakses menggunakan simbol bintang (*) karena merupakan pointer ke tipe datanya. Di dalam prosedur ini terdapat:
                 <ol>
                     <li>Teks menggunakan fmt.Print yang bertuliskan "Total berat per wadah: ".</li>
-                    <li>Perulangan for dengan inisiasi membuat variabel baru bernama i menggunakan := dan diberi value 0, kondisi variabel i lebih kecil dari variabel jumlahWadah, update i++ (Post-increment).</li>
+                    <li>Perulangan for dengan inisiasi membuat variabel baru bernama i menggunakan := dan diberi value 0, kondisi variabel i lebih kecil dari value variabel jumlahWadah, update i++ (Post-increment).</li>
                     <li>Isi dari perulangan ini adalah teks yang menampilkan total berat per wadah menggunakan fmt.Printf dan format %.2f (float dengan 2 angka di belakang koma) dari array wadah[i].</li>
                 </ol>
             </li>
@@ -364,7 +363,7 @@ Program ini adalah program untuk mencatat berat balita, tiap berat dimasukkan ke
                 <ol>
                     <li>Teks menggunakan fmt.Print untuk menampilkan perintah memasukkan banyak data berat balita.</li>
                     <li>Input menggunakan fmt.Scan untuk variabel n, lalu hasil input dimasukkan ke variabel n.</li>
-                    <li>Perulangan for dengan inisiasi membuat variabel baru bernama i menggunakan := dan diberi value 0, kondisi variabel i lebih kecil dari variabel n, update i++ (Post-increment).</li>
+                    <li>Perulangan for dengan inisiasi membuat variabel baru bernama i menggunakan := dan diberi value 0, kondisi variabel i lebih kecil dari value variabel n, update i++ (Post-increment).</li>
                     <li>Isi dari perulangan ini adalah teks yang menampilkan index berat balita menggunakan fmt.Printf dan format %d (format integer) dari variabel i+1. Dan juga input menggunakan fmt.Scan untuk arrBerat. Lalu tiap hasil input dibaca oleh program menggunakan fmt.Scan dan &arrBerat[i], lalu nilai inputan dimasukkan ke arrBerat berdasarkan index ([i]) secara berurutan.</li>
                 </ol>
             </li>
@@ -372,10 +371,10 @@ Program ini adalah program untuk mencatat berat balita, tiap berat dimasukkan ke
                 <br/>Prosedur ini adalah prosedur untuk menghitung elemen terkecil dan terbesar dari array arrBerat. prosedur ini memiliki parameter pass by value yaitu arrBerat dengan tipe data arrBalita, dan n dengan tipe data integer, serta parameter pass by reference yaitu bMin dan bMax dengan tipe data float64. Parameter pass by reference diakses menggunakan simbol bintang (*) karena merupakan pointer ke tipe datanya. Di dalam prosedur ini terdapat:
                 <ol>
                     <li>Variabel j dengan tipe data integer dan diberi value 1.</li>
-                    <li>Nilai yang ditunjuk pointer bMin bMin diberi value array ke 0 dari arrBerat.</li>
-                    <li>Nilai yang ditunjuk pointer bMin bMax diberi value array ke 0 dari arrBerat.</li>
+                    <li>Nilai yang ditunjuk pointer bMin diberi value array ke 0 dari arrBerat.</li>
+                    <li>Nilai yang ditunjuk pointer bMax diberi value array ke 0 dari arrBerat.</li>
                     <li>Perulangan for dengan kondisi j lebih kecil dari n</li>
-                    <li>Di dalam perulangan tersebut ada if pertama dengan kondisi jika ada elemen di arrBerat[j] yang lebih kecil dari variabel bMin maka value dari variabel bMin adalah elemen arrBerat[j] yang paling kecil tersebut. Ada juga if kedua dengan kondisi jika ada elemen di arrBerat[j] yang lebih besar dari variabel bMax maka value dari variabel bMax adalah elemen arrBerat[j] yang paling besar tersebut. Baris terakhir pada kode for ini adalah value dari variabel j adalah variabel j ditambah 1.</li>
+                    <li>Di dalam perulangan tersebut ada if pertama dengan kondisi jika ada elemen di arrBerat[j] yang lebih kecil dari value variabel bMin maka value dari variabel bMin adalah elemen arrBerat[j] yang paling kecil tersebut. Ada juga if kedua dengan kondisi jika ada elemen di arrBerat[j] yang lebih besar dari variabel bMax maka value dari value variabel bMax adalah elemen arrBerat[j] yang paling besar tersebut. Baris terakhir pada kode for ini adalah value dari variabel j adalah variabel j ditambah 1.</li>
                 </ol>
             </li>
             <li>Fungsi <strong>rerata</strong>
