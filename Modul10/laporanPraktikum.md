@@ -1,4 +1,4 @@
-# <h1 align="center">Laporan Praktikum Modul 4 - Soal Latihan Modul 4 </h1>
+# <h1 align="center">Laporan Praktikum Modul 10 - Soal Latihan Modul 10 </h1>
 
 <p align="center">Aqilla Rachel Rabbani - 109082500199</p>
 
@@ -74,7 +74,7 @@ func main() {
 
 ##### Penjelasan
 
-Program ini adalah program untuk mencari nilai minimum dan maksimum dari array anak_kelinci. Berikut penjeleasan yang lebih lanjut: 
+Program ini adalah program untuk mencari nilai minimum dan maksimum dari array anak_kelinci. Berikut penjelasan yang lebih lanjut: 
 
 <ul>
     <li>Tipe array <strong>anak_kelinci</strong>
@@ -346,7 +346,7 @@ Program ini adalah program untuk mencatat berat balita, tiap berat dimasukkan ke
     </li>
     <li><strong>Di dalam func main()</strong>
         <ol>
-            <li>Program memiliki variabel balita dengan tipe data arrBalita, yang berarti balita adalah array untuk menyimpan banyaknya balita.</li>
+            <li>Program memiliki variabel balita dengan tipe data arrBalita, yang berarti balita adalah array untuk menyimpan banyaknya berat balita.</li>
             <li>Program memiliki variabel n dengan tipe data integer.</li>
             <li>Program memiliki variabel bMin (berat minimum/paling kecil) dan bMax (berat maksimum/paling besar) dengan tipe data float64.</li>
             <li>Program memanggil prosedur banyakBalita dengan parameter aktual &balita dan &n.</li>
@@ -372,8 +372,8 @@ Program ini adalah program untuk mencatat berat balita, tiap berat dimasukkan ke
                 <br/>Prosedur ini adalah prosedur untuk menghitung elemen terkecil dan terbesar dari array arrBerat. prosedur ini memiliki parameter pass by value yaitu arrBerat dengan tipe data arrBalita, dan n dengan tipe data integer, serta parameter pass by reference yaitu bMin dan bMax dengan tipe data float64. Parameter pass by reference diakses menggunakan simbol bintang (*) karena merupakan pointer ke tipe datanya. Di dalam prosedur ini terdapat:
                 <ol>
                     <li>Variabel j dengan tipe data integer dan diberi value 1.</li>
-                    <li>Variabel bMin yang diberi value array ke 0 dari arrBerat.</li>
-                    <li>Variabel bMax yang diberi value array ke 0 dari arrBerat.</li>
+                    <li>Nilai yang ditunjuk pointer bMin bMin diberi value array ke 0 dari arrBerat.</li>
+                    <li>Nilai yang ditunjuk pointer bMin bMax diberi value array ke 0 dari arrBerat.</li>
                     <li>Perulangan for dengan kondisi j lebih kecil dari n</li>
                     <li>Di dalam perulangan tersebut ada if pertama dengan kondisi jika ada elemen di arrBerat[j] yang lebih kecil dari variabel bMin maka value dari variabel bMin adalah elemen arrBerat[j] yang paling kecil tersebut. Ada juga if kedua dengan kondisi jika ada elemen di arrBerat[j] yang lebih besar dari variabel bMax maka value dari variabel bMax adalah elemen arrBerat[j] yang paling besar tersebut. Baris terakhir pada kode for ini adalah value dari variabel j adalah variabel j ditambah 1.</li>
                 </ol>
