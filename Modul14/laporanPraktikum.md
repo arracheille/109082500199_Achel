@@ -6,7 +6,7 @@
 
 ### 1. Hercules, preman terkenal seantero ibukota, memiliki kerabat di banyak daerah. Tentunya Hercules sangat suka mengunjungi semua kerabatnya itu.
 
-### Diberikan masukan nomor rumah dari semua kerabatnya di suatu daerah, buatlah program rumahkerabat yang akan menyusun nomor-nomor rumah kerabatnya secara terurut membesar menggunakan algoritma selection sort. 
+### Diberikan masukan nomor rumah dari semua kerabatnya di suatu daerah, buatlah program rumahkerabat yang akan menyusun nomor-nomor rumah kerabatnya secara terurut membesar menggunakan algoritma selection sort.
 
 ### Masukan dimulai dengan sebuah integer n (0 < n < 1000), banyaknya daerah kerabat Hercules tinggal. Isi n baris berikutnya selalu dimulai dengan sebuah integer m (0 < m < 1000000) yang menyatakan banyaknya rumah kerabat di daerah tersebut, diikuti dengan rangkaian bilangan bulat positif, nomor rumah para kerabat.
 
@@ -47,14 +47,14 @@ func main() {
 
 	fmt.Print("Masukkan banyaknya daerah kerabat Hercules: ")
 	fmt.Scan(&n)
-	
+
 	for i = 0; i < n; i++ {
 		fmt.Printf("\nMasukkan nomor rumah di daerah ke-%d: ", i+1)
 		fmt.Scan(&m)
 		for j = 0; j < m; j++ {
 			fmt.Scan(&nomorRumah[j])
 		}
-		
+
 		urutNomor(&nomorRumah, m)
 		fmt.Printf("Nomor rumah terurut (%d rumah): ", m)
 
@@ -76,6 +76,7 @@ func main() {
 ![Screenshot Output Unguided 1_1](https://github.com/arracheille/109082500199_Achel/blob/main/Modul14/output/output-soal1.png)
 
 ##### Penjelasan
+
 Program ini mengurutkan nomor rumah kerabat Hercules di setiap daerah secara ascending menggunakan algoritma Selection Sort. Berikut penjelasan yang lebih lanjut:
 
 <ul>
@@ -104,10 +105,45 @@ Program ini mengurutkan nomor rumah kerabat Hercules di setiap daerah secara asc
             </li>
         </ol>
     </li>
+    <li><strong>Prosedur dan fungsi</strong>
+        <ol>
+            <li>Prosedur <strong>jumlah</strong>
+            </br>Prosedur ini adalah prosedur untuk menampilkan input secara berulang berdasarkan banyaknya jumlah kelinci. Prosedur ini memiliki parameter pass by reference yaitu jumlah_kelinci dengan tipe data anak_kelinci dan n dengan tipe data integer. Kedua parameter diakses menggunakan simbol bintang (*) karena merupakan pointer ke tipe datanya. Di dalam prosedur ini terdapat:
+                <ol>
+                    <li>Teks menggunakan fmt.Print untuk menampilkan teks perintah memasukkan jumlah kelinci ke user.</li>
+                    <li>Input menggunakan fmt.Scan, inputan dimasukkan ke variabel n.</li>
+                    <li>Perulangan for dengan inisiasi membuat variabel baru bernama i menggunakan := dan diberi value 0, kondisi variabel i lebih kecil dari value variabel n, update i++ (Post-increment).</li>
+                    <li>Isi dari perulangan ini adalah teks yang menampilkan index berat kelinci menggunakan fmt.Printf dan format %d dari variabel i+1. Dan juga input menggunakan fmt.Scan untuk array jumlah_kelinci. Lalu inputan dibaca oleh program menggunakan fmt.Scan dan &jumlah_kelinci[i], lalu nilai inputan dimasukkan ke array jumlah_kelinci berdasarkan index ([i]) secara berurutan.</li>
+                </ol>
+            </li>
+            <li>Fungsi <strong>berat</strong>
+            </br>Fungsi ini adalah fungsi untuk mencari elemen terbesar dari array jumlah_kelinci. Prosedur ini memiliki parameter pass by value yaitu jumlah_kelinci dengan tipe data anak_kelinci dan n dengan tipe data integer. Tipe data yang dikembalikan adalah integer. Di dalam fungsi ini terdapat:
+                <ol>
+                    <li>Variabel i dengan tipe data integer dan diberi nilai 0</li>
+                    <li>Variabel j dengan tipe data integer dan diberi nilai 1</li>
+                    <li>Perulangan for dengan kondisi j lebih kecil dari n.</li>
+                    <li>Isi dari perulangan ini adalah if dengan kondisi array jumlah_kelinci dengan index ke-i <strong>lebih kecil</strong> dari array jumlah_kelinci dengan index ke-j. Jika kondisi tersebut terpenuhi maka value variabel i adalah nilai variabel j. Lalu ada juga value variabel j adalah nilai variabel j ditambah 1.</li>
+                </ol>
+            Return atau nilai yang dikembalikan dari fungsi ini adalah variabel i
+            </li>
+            <li>Fungsi <strong>ringan</strong>
+            </br>Fungsi ini adalah fungsi untuk mencari elemen terkecil dari array jumlah_kelinci. Prosedur ini memiliki parameter pass by value yaitu jumlah_kelinci dengan tipe data anak_kelinci dan n dengan tipe data integer. Tipe data yang dikembalikan adalah integer. Di dalam fungsi ini terdapat:
+                <ol>
+                    <li>Variabel i dengan tipe data integer dan diberi nilai 0</li>
+                    <li>Variabel j dengan tipe data integer dan diberi nilai 1</li>
+                    <li>Perulangan for dengan kondisi j lebih kecil dari n.</li>
+                    <li>Isi dari perulangan ini adalah if dengan kondisi array jumlah_kelinci dengan index ke-i <strong>lebih besar</strong> dari array jumlah_kelinci dengan index ke-j. Jika kondisi tersebut terpenuhi maka value variabel i adalah nilai variabel j. Lalu ada juga value variabel j adalah nilai variabel j ditambah 1.</li>
+                </ol>
+            Return atau nilai yang dikembalikan dari fungsi ini adalah variabel i.
+            </li>
+        </ol>
+    </li>
 </ul>
 
-### 2. Belakangan diketahui ternyata Hercules itu tidak berani menyeberang jalan, maka selalu diusahakan agar hanya menyeberang jalan sesedikit mungkin, hanya diujung jalan. Karena nomor rumah sisi kiri jalan selalu ganjil dan sisi kanan jalan selalu genap, maka buatlah program kerabat dekat yang akan menampilkan nomor rumah mulai dari nomor yang ganjil lebih dulu terurut membesar dan kemudian menampilkan nomor rumah dengan nomor genap terurut mengecil. 
-### Format Masukan masih persis sama seperti sebelumnya. 
+### 2. Belakangan diketahui ternyata Hercules itu tidak berani menyeberang jalan, maka selalu diusahakan agar hanya menyeberang jalan sesedikit mungkin, hanya diujung jalan. Karena nomor rumah sisi kiri jalan selalu ganjil dan sisi kanan jalan selalu genap, maka buatlah program kerabat dekat yang akan menampilkan nomor rumah mulai dari nomor yang ganjil lebih dulu terurut membesar dan kemudian menampilkan nomor rumah dengan nomor genap terurut mengecil.
+
+### Format Masukan masih persis sama seperti sebelumnya.
+
 ### Keluaran terdiri dari n baris, yaitu rangkaian rumah kerabatnya terurut membesar untuk nomor ganjil, diikuti dengan terurut mengecil untuk nomor genap, di masing-masing daerah.
 
 #### soal2.go
@@ -213,10 +249,14 @@ func main() {
 
 ##### Penjelasan
 
-### 3. Kompetisi pemrograman yang baru saja berlalu diikuti oleh 17 tim dari berbagai perguruan tinggi ternama. Dalam kompetisi tersebut, setiap tim berlomba untuk menyelesaikan sebanyak mungkin problem yang diberikan. Dari 13 problem yang diberikan, ada satu problem yang menarik. Problem tersebut mudah dipahami, hampir semua tim mencoba untuk menyelesaikannya, tetapi hanya 3 tim yang berhasil. Apa sih problemnya? 
-### "Median adalah nilai tengah dari suatu koleksi data yang sudah terurut. Jika jumlah data genap, maka nilai median adalah rerata dari kedua nilai tengahnya. Pada problem ini, semua data merupakan bilangan bulat positif, dan karenanya rerata nilai tengah dibulatkan ke bawah." 
-### Buatlah program median yang mencetak nilai median terhadap seluruh data yang sudah terbaca, jika data yang dibaca saat itu adalah 0. 
-### Masukan berbentuk rangkaian bilangan bulat. Masukan tidak akan berisi lebih dari 1000000 data, tidak termasuk bilangan 0. Data 0 merupakan tanda bahwa median harus dicetak, tidak termasuk data yang dicari mediannya. Data masukan diakhiri dengan bilangan bulat -5313. 
+### 3. Kompetisi pemrograman yang baru saja berlalu diikuti oleh 17 tim dari berbagai perguruan tinggi ternama. Dalam kompetisi tersebut, setiap tim berlomba untuk menyelesaikan sebanyak mungkin problem yang diberikan. Dari 13 problem yang diberikan, ada satu problem yang menarik. Problem tersebut mudah dipahami, hampir semua tim mencoba untuk menyelesaikannya, tetapi hanya 3 tim yang berhasil. Apa sih problemnya?
+
+### "Median adalah nilai tengah dari suatu koleksi data yang sudah terurut. Jika jumlah data genap, maka nilai median adalah rerata dari kedua nilai tengahnya. Pada problem ini, semua data merupakan bilangan bulat positif, dan karenanya rerata nilai tengah dibulatkan ke bawah."
+
+### Buatlah program median yang mencetak nilai median terhadap seluruh data yang sudah terbaca, jika data yang dibaca saat itu adalah 0.
+
+### Masukan berbentuk rangkaian bilangan bulat. Masukan tidak akan berisi lebih dari 1000000 data, tidak termasuk bilangan 0. Data 0 merupakan tanda bahwa median harus dicetak, tidak termasuk data yang dicari mediannya. Data masukan diakhiri dengan bilangan bulat -5313.
+
 ### Keluaran adalah median yang diminta, satu data per baris.
 
 #### soal3.go
