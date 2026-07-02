@@ -105,38 +105,13 @@ Program ini mengurutkan nomor rumah kerabat Hercules di setiap daerah secara asc
             </li>
         </ol>
     </li>
-    <li><strong>Prosedur dan fungsi</strong>
-        <ol>
-            <li>Prosedur <strong>jumlah</strong>
-            </br>Prosedur ini adalah prosedur untuk menampilkan input secara berulang berdasarkan banyaknya jumlah kelinci. Prosedur ini memiliki parameter pass by reference yaitu jumlah_kelinci dengan tipe data anak_kelinci dan n dengan tipe data integer. Kedua parameter diakses menggunakan simbol bintang (*) karena merupakan pointer ke tipe datanya. Di dalam prosedur ini terdapat:
-                <ol>
-                    <li>Teks menggunakan fmt.Print untuk menampilkan teks perintah memasukkan jumlah kelinci ke user.</li>
-                    <li>Input menggunakan fmt.Scan, inputan dimasukkan ke variabel n.</li>
-                    <li>Perulangan for dengan inisiasi membuat variabel baru bernama i menggunakan := dan diberi value 0, kondisi variabel i lebih kecil dari value variabel n, update i++ (Post-increment).</li>
-                    <li>Isi dari perulangan ini adalah teks yang menampilkan index berat kelinci menggunakan fmt.Printf dan format %d dari variabel i+1. Dan juga input menggunakan fmt.Scan untuk array jumlah_kelinci. Lalu inputan dibaca oleh program menggunakan fmt.Scan dan &jumlah_kelinci[i], lalu nilai inputan dimasukkan ke array jumlah_kelinci berdasarkan index ([i]) secara berurutan.</li>
-                </ol>
-            </li>
-            <li>Fungsi <strong>berat</strong>
-            </br>Fungsi ini adalah fungsi untuk mencari elemen terbesar dari array jumlah_kelinci. Prosedur ini memiliki parameter pass by value yaitu jumlah_kelinci dengan tipe data anak_kelinci dan n dengan tipe data integer. Tipe data yang dikembalikan adalah integer. Di dalam fungsi ini terdapat:
-                <ol>
-                    <li>Variabel i dengan tipe data integer dan diberi nilai 0</li>
-                    <li>Variabel j dengan tipe data integer dan diberi nilai 1</li>
-                    <li>Perulangan for dengan kondisi j lebih kecil dari n.</li>
-                    <li>Isi dari perulangan ini adalah if dengan kondisi array jumlah_kelinci dengan index ke-i <strong>lebih kecil</strong> dari array jumlah_kelinci dengan index ke-j. Jika kondisi tersebut terpenuhi maka value variabel i adalah nilai variabel j. Lalu ada juga value variabel j adalah nilai variabel j ditambah 1.</li>
-                </ol>
-            Return atau nilai yang dikembalikan dari fungsi ini adalah variabel i
-            </li>
-            <li>Fungsi <strong>ringan</strong>
-            </br>Fungsi ini adalah fungsi untuk mencari elemen terkecil dari array jumlah_kelinci. Prosedur ini memiliki parameter pass by value yaitu jumlah_kelinci dengan tipe data anak_kelinci dan n dengan tipe data integer. Tipe data yang dikembalikan adalah integer. Di dalam fungsi ini terdapat:
-                <ol>
-                    <li>Variabel i dengan tipe data integer dan diberi nilai 0</li>
-                    <li>Variabel j dengan tipe data integer dan diberi nilai 1</li>
-                    <li>Perulangan for dengan kondisi j lebih kecil dari n.</li>
-                    <li>Isi dari perulangan ini adalah if dengan kondisi array jumlah_kelinci dengan index ke-i <strong>lebih besar</strong> dari array jumlah_kelinci dengan index ke-j. Jika kondisi tersebut terpenuhi maka value variabel i adalah nilai variabel j. Lalu ada juga value variabel j adalah nilai variabel j ditambah 1.</li>
-                </ol>
-            Return atau nilai yang dikembalikan dari fungsi ini adalah variabel i.
-            </li>
-        </ol>
+    <li><strong>Prosedur urutNomor</strong>
+        </br>Prosedur ini adalah prosedur selection sort untuk mengurutkan nomor rumah dari yang terkecil hingga yang terbesar. Berikut penjelasan yang lebih lanjut:
+		<ol>
+			<li>Prosedur ini memiliki pointer nomor dengan tipe data kerabat, dan n sebagai argumen bertipe data integer.</li>
+			<li>Variabel t, i, j dan idx_min dengan tipe data integer.</li>
+			<li>Perulangan for dengan inisiasi variabel i diberi value 1, kondisi variabel i lebih kecil sama dengan variabel n dikurangi 1, dan update i+=1 atau variabel i ditambahkan dengan variabel 1 di setiap perulangan. Perulangan ini berfungsi untuk mencari nilai terkecil di sisa array, lalu menukarnya ke posisi target (i-1), sehingga array nomor urut dari yang terkecil hingga terbesar.</li>
+		</ol>
     </li>
 </ul>
 
@@ -249,6 +224,61 @@ func main() {
 
 ##### Penjelasan
 
+Program ini mengurutkan nomor rumah kerabat Hercules di setiap daerah dengan nomor ganjil diurutkan secara ascending dan nomor genap secara descending, menggunakan algoritma Selection Sort. Berikut penjelasan yang lebih lanjut:
+
+<ul>
+    <li>Tipe array <strong>rumahKerabat</strong>
+    <br/>Program memiliki array bernama rumahKerabat dengan kapasitas rumah sebesar 1000000 dan tipe data integer.
+    </li>
+    <li><strong>Di dalam func main()</strong>
+        <ol>
+            <li>Program memiliki variabel n dan m dengan tipe data integer</li>
+            <li>Program memiliki variabel ganjil dan genap dengan tipe data rumahKerabat, yang berarti kedua variabel tersebut adalah array.</li>
+            <li>Program memiliki variabel i, j, k dan l dengan tipe data integer</li>
+            <li>Program memiliki variabel nGanjil, nGenap dan val dengan tipe data integer</li>
+            <li>User diberi perintah untuk menginputkan variabel n menggunakan fmt.Scan, perintah tersebut ditulis menggunakan fmt.Print.</li>
+            <li>Program membuat perulangan for dengan:
+                <ol type="a">
+                    <li><strong>inisiasi</strong>, yaitu variabel i diberi nilai 0.</li>
+                    <li><strong>kondisinya</strong> adalah nilai variabel i kurang dari variabel n.</li>
+                    <li><strong>updatenya</strong> adalah i++ (Post-increment).</li>
+                </ol>
+            </li>
+            <li>Kode di dalam perulangan for:
+                <ol type="a">
+                    <li>Fmt.Scan untuk memasukkan banyaknya rumah di daerah ke-i, nomor tersebut dimasukkan ke variabel m.</li>
+                    <li>Variabel nGanjil dan nGenap yang diberi value 0.</li>
+                    <li>Perulangan untuk memasukkan nomor rumah per daerah. Di dalam perulangan terdapat fmt.Scan sebagai input untuk variabel val, dan kondisi if else:
+						<ol>
+							<li>Kondisi 1, jika variabel val di-modulus 2 tidak sama dengan 0, maka angka yang diinputkan ke variabel val tersebut dimasukkan ke array ganjil dengan index nGanjil, dan variabel nGanjil bertambah di setiap perulangan (nGanjil++).</li>
+							<li>Kondisi 2, jika kondisi pertama tidak terpenuhi maka akan menjalankan kondisi ini, atau angka yang dimasukkan ke variabel val adalah angka genap, angka yang diinputkan ke variabel val tersebut dimasukkan ke array genap dengan index nGenap, dan variabel nGenap bertambah di setiap perulangan (nGenap++).</li>
+						</ol>
+					</li>
+                    <li>Program memanggil prosedur urutKecil dengan parameter aktual ganjil dan argumen nGanjil.</li>
+                    <li>Program memanggil prosedur urutBesar dengan parameter aktual genap dan argumen nGenap.</li>
+                    <li>Program menampilkan array yang sudah terurut menggunakan perulangan, masing-masing untuk array ganjil dan genap.</li>
+                </ol>
+            </li>
+        </ol>
+    </li>
+    <li><strong>Prosedur urutKecil</strong>
+        </br>Prosedur ini adalah prosedur selection sort untuk mengurutkan nomor rumah dari yang terkecil hingga yang terbesar. Berikut penjelasan yang lebih lanjut:
+		<ol>
+			<li>Prosedur ini memiliki pointer nomor dengan tipe data rumahKerabat, dan n sebagai parameter pass by value bertipe data integer.</li>
+			<li>Variabel t, i, j dan idx_min dengan tipe data integer.</li>
+			<li>Perulangan for dengan inisiasi variabel i diberi value 1, kondisi variabel i lebih kecil sama dengan variabel n dikurangi 1, dan update i+=1 atau variabel i ditambahkan dengan variabel 1 di setiap perulangan. Perulangan ini berfungsi untuk mencari nilai terkecil di sisa array, lalu menukarnya ke posisi target (i-1), sehingga array nomor urut dari yang terkecil hingga terbesar.</li>
+		</ol>
+    </li>
+    <li><strong>Prosedur urutBesar</strong>
+        </br>Prosedur ini adalah prosedur selection sort untuk mengurutkan nomor rumah dari yang terbesar hingga yang terkecil. Berikut penjelasan yang lebih lanjut:
+		<ol>
+			<li>Prosedur ini memiliki pointer nomor dengan tipe data rumahKerabat, dan n sebagai parameter pass by value bertipe data integer.</li>
+			<li>Variabel t, i, j dan idx_max dengan tipe data integer.</li>
+			<li>Perulangan for dengan inisiasi variabel i diberi value 1, kondisi variabel i lebih kecil sama dengan variabel n dikurangi 1, dan update i+=1 atau variabel i ditambahkan dengan variabel 1 di setiap perulangan. Perulangan ini berfungsi untuk mencari nilai terbesar di sisa array, lalu menukarnya ke posisi target (i-1), sehingga array nomor urut dari yang terbesar hingga terkecil.</li>
+		</ol>
+    </li>
+</ul>
+
 ### 3. Kompetisi pemrograman yang baru saja berlalu diikuti oleh 17 tim dari berbagai perguruan tinggi ternama. Dalam kompetisi tersebut, setiap tim berlomba untuk menyelesaikan sebanyak mungkin problem yang diberikan. Dari 13 problem yang diberikan, ada satu problem yang menarik. Problem tersebut mudah dipahami, hampir semua tim mencoba untuk menyelesaikannya, tetapi hanya 3 tim yang berhasil. Apa sih problemnya?
 
 ### "Median adalah nilai tengah dari suatu koleksi data yang sudah terurut. Jika jumlah data genap, maka nilai median adalah rerata dari kedua nilai tengahnya. Pada problem ini, semua data merupakan bilangan bulat positif, dan karenanya rerata nilai tengah dibulatkan ke bawah."
@@ -315,3 +345,34 @@ func main() {
 ![Screenshot Output Unguided 1_1](https://github.com/arracheille/109082500199_Achel/blob/main/Modul14/output/output-soal3.png)
 
 ##### Penjelasan
+Program ini mencari nilai median terhadap seluruh data yang sudah terbaca, jika data yang dibaca saat itu adalah 0. Berikut penjelasan yang lebih lanjut:
+
+<ul>
+    <li>Tipe array <strong>bilangan</strong>
+    <br/>Program memiliki array bernama bilangan dengan kapasitas max sebesar 1000001 dan tipe data integer.
+    </li>
+    <li><strong>Di dalam func main()</strong>
+        <ol>
+            <li>Program memiliki variabel data dengan tipe data bilangan, yang berarti variabel data adalah sebuah array.</li>
+            <li>Program memiliki variabel n dan nilai dengan tipe data integer.</li>
+            <li>Program memberi value 0 ke variabel n.</li>
+            <li>User diberi perintah untuk menginputkan variabel nilai menggunakan fmt.Scan, perintah tersebut ditulis menggunakan fmt.Println.</li>
+            <li>Program membuat perulangan for, dengan kondisi nilai tidak sama dengan -5313, yang berarti perulangan akan tetap berjalan sampai variabel nilai memiliki value -5313</li>
+            <li>Kode di dalam perulangan for:
+                <ol type="a">
+                    <li>Kondisi if, jika nilai sama dengan 0, maka program akan menjalankan prosedur urutkan dengan parameter aktual yaitu variabel data dan argumen yaitu variabel n. Terdapat kondisi if lagi, jika variabel n di-modulus 2 hasilnya sama dengan 1, maka program akan menampilkan median dari array data yang indexnya dibagi 2. Jika kondisi tersebut tidak terpenuhi maka median yang ditampilkan adalah array data dengan index n dibagi 2-1, ditambah array data dengan index n dibagi 2. Setelah ditemukan hasilnya, array tersebut dibagi 2 lagi.</li>
+                    <li>Kondisi else, yang berarti kondisi sebelumnya tidak terpenuhi, isi dari kondisi ini adalah array data dengan index n diisi variabel nilai, variabel n bertambah di setiap perulangan (n++).</li>
+                    <li>Terakhir ada fmt.Scan sebagai input untuk variabel nilai.</li>
+                </ol>
+            </li>
+        </ol>
+    </li>
+    <li><strong>Prosedur urutkan</strong>
+        </br>Prosedur ini adalah prosedur untuk mengurutkan angka array dari yang terkecil hingga yang terbesar. Berikut penjelasan yang lebih lanjut:
+		<ol>
+			<li>Prosedur ini memiliki pointer angka dengan tipe data bilangan, dan n sebagai argumen bertipe data integer.</li>
+			<li>Variabel i, j dan temp dengan tipe data integer.</li>
+			<li>Perulangan for dengan inisiasi variabel i diberi value 1, kondisi variabel i lebih kecil sama dengan variabel n dikurangi 1, dan update i+=1 atau variabel i ditambahkan dengan variabel 1 di setiap perulangan. Perulangan ini berfungsi untuk mengurutakan angka dengan cara elemen dengan index ke-i disimpan sementara di variabel temp, lalu digeser mundur (angka[j] = angka[j-1]) selama elemen sebelumnya lebih besar, sampai ditemukan posisi yang tepat.</li>
+		</ol>
+    </li>
+</ul>
